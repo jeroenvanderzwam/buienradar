@@ -1,0 +1,39 @@
+# This file contains metadata for your plugin. Since 
+# version 2.0 of QGIS this is the proper way to supply 
+# information about a plugin. The old method of 
+# embedding metadata in __init__.py will 
+# is no longer supported since version 2.0.
+
+# This file should be included when you package your plugin.# Mandatory items:
+
+[general]
+name=Buienradar Plugin
+qgisMinimumVersion=3.8
+description=A simple plugin that retrieves weather data from the Dutch Buienradar API. Currently only in Dutch.
+version=1.0
+author=Peter Schols & Jeroen van der Zwam
+email=peter@peterschols.com, jeroenvanderzwam@hotmail.com
+
+about=Een simpele plugin die Nederlandse weerdata van de buienradar API haalt en deze met tijdelijke puntsymbolen op de kaart toont. Ook kan een luchtfoto of een topografische ondergrond worden ingeladen. Een internetverbinding is noodzakelijk om deze plugin te gebruiken. Installeer voor gebruik eerst de python modules xmltodict & pandas. De Buienradardata is vrij beschikbaar voor niet-commerciële doeleinden, bronvermelding is daarbij verplicht.
+
+tracker=http://bugs
+repository=https://github.com/jeroenvanderzwam/qgis_plugins/tree/master/buienradar_plugin
+# End of mandatory metadata
+
+# Recommended items:
+
+# Uncomment the following line and add your changelog:
+changelog=1.0 - first stable release
+
+# Tags are comma separated with spaces allowed
+tags=web,python
+
+homepage=https://github.com/jeroenvanderzwam/qgis_plugins
+category=Web
+icon=icon.png
+# experimental flag
+experimental=False
+
+# deprecated flag (applies to the whole plugin, not just a single version)
+deprecated=False
+plugin_dependencies=xmltodict,pandas
