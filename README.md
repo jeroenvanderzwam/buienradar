@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <html>
 <body>
 <h3>Plugin Builder Results</h3>
