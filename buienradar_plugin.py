@@ -229,7 +229,6 @@ class Buienradar:
                 action)
             self.iface.removeToolBarIcon(action)
 
-
     def load_buienradar(self):
         self.RD_stelsel = QgsVectorLayer('Point?crs=epsg:4326', 'Buienradar', 'memory')
 

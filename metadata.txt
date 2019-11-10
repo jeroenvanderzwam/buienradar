@@ -16,8 +16,8 @@ email=peter@peterschols.com, jeroenvanderzwam@hotmail.com
 
 about=Een simpele plugin die Nederlandse weerdata van de buienradar API haalt en deze met tijdelijke puntsymbolen op de kaart toont. Ook kan een luchtfoto of een topografische ondergrond worden ingeladen. Een internetverbinding is noodzakelijk om deze plugin te gebruiken. Installeer voor gebruik eerst de python modules xmltodict & pandas. De Buienradardata is vrij beschikbaar voor niet-commerciële doeleinden, bronvermelding is daarbij verplicht.
 
-tracker=http://bugs
-repository=https://github.com/jeroenvanderzwam/qgis_plugins/tree/master/buienradar_plugin
+tracker=https://github.com/jeroenvanderzwam/buienradar/issues
+repository=https://github.com/jeroenvanderzwam/buienradar
 # End of mandatory metadata
 
 # Recommended items:
@@ -28,7 +28,7 @@ changelog=1.0 - first stable release
 # Tags are comma separated with spaces allowed
 tags=web,python
 
-homepage=https://github.com/jeroenvanderzwam/qgis_plugins
+homepage=https://github.com/jeroenvanderzwam/buienradar
 category=Web
 icon=icon.png
 # experimental flag
