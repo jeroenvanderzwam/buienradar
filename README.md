@@ -38,5 +38,13 @@ For information on writing PyQGIS code, see <b>http://loc8.cc/pyqgis_resources</
 <p>
 &copy;2011-2019 GeoApt LLC - geoapt.com 
 </p>
+<p>
+Om de plugin te laten werken zullen er twee externe bibliotheken moeten worden geinstalleerd.
+Dit kun je doen door de osgeo shell te openen en daar het volgende in te typen
+
+    py3_env (dit zet de juiste variabelen voor python3)
+    pip3 install pandas
+    pip3 install xmltodict
+
 </body>
 </html>
