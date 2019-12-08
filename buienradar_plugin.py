@@ -56,109 +56,32 @@ class GetBuienradarData:
         # Aanmaken CSV writer
         buienradardata = open(resolve('buienradardata.csv'), 'w', newline='')
         csvwriter = csv.writer(buienradardata)
-        buienradar_head = []
 
-        count = 0
         # Loop voor alle weerstations
         for station in root.iter('weerstation'):
-            gegevens = []
-            if count == 0: # Toevoegen van header aan CSV
-                idnr = '@id'
-                buienradar_head.append(idnr)
-                stationcode = station.find('stationcode').tag
-                buienradar_head.append(stationcode)
-                stationnaam = station.find('stationnaam').tag
-                buienradar_head.append(stationnaam)
-                lat = station.find('lat').tag
-                buienradar_head.append(lat)
-                lon = station.find('lon').tag
-                buienradar_head.append(lon)
-                datum = station.find('datum').tag
-                buienradar_head.append(datum)
-                luchtvochtigheid = station.find('luchtvochtigheid').tag
-                buienradar_head.append(luchtvochtigheid)
-                temperatuurGC = station.find('temperatuurGC').tag
-                buienradar_head.append(temperatuurGC)
-                windsnelheidMS = station.find('windsnelheidMS').tag
-                buienradar_head.append(windsnelheidMS)
-                windsnelheidBF = station.find('windsnelheidBF').tag
-                buienradar_head.append(windsnelheidBF)
-                windrichtingGR = station.find('windrichtingGR').tag
-                buienradar_head.append(windrichtingGR)
-                windrichting = station.find('windrichting').tag
-                buienradar_head.append(windrichting)
-                luchtdruk = station.find('luchtdruk').tag
-                buienradar_head.append(luchtdruk)
-                zichtmeters = station.find('zichtmeters').tag
-                buienradar_head.append(zichtmeters)
-                windstotenMS = station.find('windstotenMS').tag
-                buienradar_head.append(windstotenMS)
-                regenMMPU = station.find('regenMMPU').tag
-                buienradar_head.append(regenMMPU)
-                zonintensiteitWM2 = station.find('zonintensiteitWM2').tag
-                buienradar_head.append(zonintensiteitWM2)
-                icoonactueel = 'icoonactueel'
-                buienradar_head.append(icoonactueel)
-                zin = 'zin'
-                buienradar_head.append(zin)
-                temperatuur10cm = station.find('temperatuur10cm').tag
-                buienradar_head.append(temperatuur10cm)
-                url = station.find('url').tag
-                buienradar_head.append(url)
-                latGraden = station.find('latGraden').tag
-                buienradar_head.append(latGraden)
-                lonGraden = station.find('lonGraden').tag
-                buienradar_head.append(lonGraden)
-                csvwriter.writerow(buienradar_head)
-                count = count + 1
+            header = []
+            for child in root.iter('weerstation'):
+                for x in child:
+                    header.append(x.tag)
+                break
+
+            header.insert(0, '@id')
+            header.insert(-4, 'zin')
+        csvwriter.writerow(header)
             
-            idnr = station.attrib['id']
-            gegevens.append(idnr)
-            stationcode = station.find('stationcode').text
-            gegevens.append(stationcode)
-            stationnaam = station.find('stationnaam').text
-            gegevens.append(stationnaam)
-            lat = station.find('lat').text
-            gegevens.append(lat)
-            lon = station.find('lon').text
-            gegevens.append(lon)
-            datum = station.find('datum').text
-            gegevens.append(datum)
-            luchtvochtigheid = station.find('luchtvochtigheid').text
-            gegevens.append(luchtvochtigheid)
-            temperatuurGC = station.find('temperatuurGC').text
-            gegevens.append(temperatuurGC)
-            windsnelheidMS = station.find('windsnelheidMS').text
-            gegevens.append(windsnelheidMS)
-            windsnelheidBF = station.find('windsnelheidBF').text
-            gegevens.append(windsnelheidBF)
-            windrichtingGR = station.find('windrichtingGR').text
-            gegevens.append(windrichtingGR)
-            windrichting = station.find('windrichting').text
-            gegevens.append(windrichting)
-            luchtdruk = station.find('luchtdruk').text
-            gegevens.append(luchtdruk)
-            zichtmeters = station.find('zichtmeters').text
-            gegevens.append(zichtmeters)
-            windstotenMS = station.find('windstotenMS').text
-            gegevens.append(windstotenMS)
-            regenMMPU = station.find('regenMMPU').text
-            gegevens.append(regenMMPU)
-            zonintensiteitWM2 = station.find('zonintensiteitWM2').text
-            gegevens.append(zonintensiteitWM2)
-            icoonactueel = station.find('icoonactueel').attrib['ID']
-            gegevens.append(icoonactueel)
-            zin = station.find('icoonactueel').attrib['zin']
-            gegevens.append(zin)
-            temperatuur10cm = station.find('temperatuur10cm').text
-            gegevens.append(temperatuur10cm)
-            url = station.find('url').text
-            gegevens.append(url)
-            latGraden = station.find('latGraden').text
-            gegevens.append(latGraden)
-            lonGraden = station.find('lonGraden').text
-            gegevens.append(lonGraden)
-            csvwriter.writerow(gegevens)
+        for child in root.iter('weerstation'):
+            attributen = []
+            for attr in header:
+                if attr == '@id':
+                    var = child.attrib['id']
+                elif attr == 'icoonactueel':
+                    var = child.find('icoonactueel').attrib['ID']
+                elif attr == 'zin':
+                    var = child.find('icoonactueel').attrib['zin']
+                else:
+                    var = child.find(attr).text
+                attributen.append(var)   
+            csvwriter.writerow(attributen)
         
         # Sluiten CSV bestand
         buienradardata.close()
