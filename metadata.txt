@@ -8,7 +8,7 @@
 
 [general]
 name=Buienradar Plugin
-qgisMinimumVersion=3.8
+qgisMinimumVersion=3.4
 description=A simple plugin that retrieves weather data from the Dutch Buienradar API. Currently only in Dutch.
 version=1.2
 author=Peter Schols & Jeroen van der Zwam
