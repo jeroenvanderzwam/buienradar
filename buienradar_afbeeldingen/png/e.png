@@ -37,7 +37,7 @@
     b.pageParams = {};
 
 
-    window.ag34bcbc80764b7fb9069ea8809edf40 = '541729243104493fdb3df1a5a3eebf92918c45';
+    window.ag34bcbc80764b7fb9069ea8809edf40 = '46be913024ae678cdb22e548819d0ffa6da4c8';
     var s = b.appSettings = b.appSettings || {};
     s.googleAds = {"active":true,"dfpSlotArticle":"/21730500021/rtl-buienradar/web/detail","dfpSlotIndex":"/21730500021/rtl-buienradar/web/navigation","dfpSlotHome":"/21730500021/rtl-buienradar/web/home","trackingId":"UA-434951-24","tagManagerId":"GTM-WDF75J5","siteVerification":"Yjtl5ibZhWHNA5F_78PoRLpYZ1eIliLdjjdataKc1_M","prebidScriptUrl":"//js-sec.indexww.com/ht/p/188944-60921698652710.js"};
 
@@ -53,52 +53,6 @@
 </script>
 
 <script src="/resources/actual/6260"></script>
-
-
-
-
-<!--Adomik randomizer for ad call key value targeting-->
-<script type='text/javascript'>
-    window.Adomik = window.Adomik || {};
-    Adomik.randomAdGroup = function () {
-        var rand = Math.random();
-
-        if (rand < 0.90) {
-            return "ad_opt";
-        }
-        else if (rand < 0.91) {
-            return "ad_bc";
-        }
-        else if (rand < 0.92) {
-            return "ad_ex0";
-        }
-        else if (rand < 0.93) {
-            return "ad_ex1";
-        }
-        else if (rand < 0.94) {
-            return "ad_ex2";
-        }
-        else if (rand < 0.95) {
-            return "ad_ex3";
-        }
-        else if (rand < 0.96) {
-            return "ad_ex4";
-        }
-        else if (rand < 0.97) {
-            return "ad_ex5";
-        }
-        else if (rand < 0.98) {
-            return "ad_ex6";
-        }
-        else if (rand < 0.99) {
-            return "ad_ex7";
-        }
-        else {
-            return "ad_ex8";
-        }
-
-    };
-</script>
 
 <!-- Google Tag Manager -->
 <noscript>
@@ -151,7 +105,7 @@
     </script>
 
         <script type="text/javascript">
-            var dataLayer = [];
+            window.dataLayer = window.dataLayer || [];
             var GMTTimeout;
             RTL.cookieService.then(setGTMMetaData);
 
@@ -162,7 +116,7 @@
 
                             var userID = (e.UID !== undefined) ? e.UID : "";
 
-                            dataLayer.push({
+                            window.dataLayer.push({
                                 "abstractkey": "294457",
                                 "seasonkey": "294458",
                                 "type": dfpType,
@@ -190,25 +144,26 @@
     }];
 
     (function (w, d, s, l, i) {
-    w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-            new Date().getTime(), event: 'gtm.js'
-    }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'spotxDataLayer', 'GTM-NH3RQL3');
 </script>
 
+    <script src="https://csm.cxpublic.com/NLProfiel.js"></script>
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <link rel="apple-touch-icon" href="/resources/images/favicon.png">
 <link rel="icon" sizes="192x192" href="/resources/images/favicon.png">
 
-    <link href="//static.buienradar.nl/resources/css/v/1.5.39/buienradar.min.css" rel="stylesheet" media="all" />
-    <script src="//static.buienradar.nl/resources/js/v/1.5.39/packages.min.js"></script>
-    <script src="//static.buienradar.nl/resources/js/v/1.5.39/buienradar.min.js"></script>
+    <link href="//cdn.buienradar.nl/resources/css/v/1.5.124/buienradar.min.css" rel="stylesheet" media="all" />
+    <script src="//cdn.buienradar.nl/resources/js/v/1.5.124/packages.min.js"></script>
+    <script src="//cdn.buienradar.nl/resources/js/v/1.5.124/buienradar.min.js"></script>
 
-<link href="//static.buienradar.nl/resources/css/v/1.5.39/tests.min.css" rel="stylesheet" media="all" />
+<link href="//cdn.buienradar.nl/resources/css/v/1.5.124/tests.min.css" rel="stylesheet" media="all" />
 
 
 
@@ -216,9 +171,12 @@
     window.buienradar.api.apiUrl = '//api.buienradar.nl';
     window.buienradar.api.graphApiUrl = '//graphdata.buienradar.nl';
     window.buienradar.api.dataApiUrl = '//data.buienradar.nl';
+    window.buienradar.api.imageApiUrl = '//image.buienradar.nl';
     window.buienradar.api.locationApiUrl = '//location.buienradar.nl';
-    window.buienradar.api.forecastDomain = '//api.buienradar.nl';
-    window.buienradar.api.forecastPath = '/data/forecast/1.1';
+    window.buienradar.api.observationApiUrl = '//observations.buienradar.nl';
+    window.buienradar.api.forecastApiUrl = '//forecast.buienradar.nl';
+    window.buienradar.api.photoVideoApiUrl = 'https://photovideoapi.buienradar.nl/';
+    window.buienradar.cdn.domain = '//cdn.buienradar.nl';
     window.buienradar.photoVideoAPIURL = 'https://photovideoapi.buienradar.nl/';
     window.buienradar.photoVideoAgreementVersion = '0.2';
 </script>
@@ -232,7 +190,7 @@
 	<a href="#" class="nav-opener"><span>opener</span></a>
 <div class="header-t">
     <div class="container">
-        <div class="logo" itemscope itemtype="http://schema.org/Brand"><a href="/" itemprop="url"><img src="/resources/images/logor.svg" itemprop="image" alt="Buienradar"></a></div>
+        <div class="logo" itemscope itemtype="http://schema.org/Brand"><a href="/" itemprop="url"><img src="//cdn.buienradar.nl/resources/images/logor.svg" itemprop="image" alt="Buienradar"></a></div>
             <div class="header-r">
                 <div class="routeradar">
     <a href="/nederland/weerbericht/verkeer"><span class="title"><em>Verkeer:</em></span></a>
@@ -263,7 +221,7 @@
                                         $('#adholderContainerHeader').closest('.center').insertAfter('#header-b');
                                     });
                                 }
-                            }
+                            }                            
                         </script>
                     </div>
                 </div>
@@ -310,6 +268,7 @@
                                                         <li class=""><a href="/nederland/temperatuur" data-value="temperatuur">Temperatuur</a></li>
                                                         <li class=""><a href="/nederland/wind" data-value="wind">Wind</a></li>
                                                         <li class=""><a href="/nederland/gezondheid" data-value="gezondheid">Gezondheid</a></li>
+                                                        <li class=""><a href="/nederland/uitradar" data-value="uitradar">Uitradar</a></li>
                                                         <li class=""><a href="/nederland/evenementen" data-value="evenementen">Evenementen</a></li>
                                                 </ul>
                                             </div>
@@ -325,6 +284,7 @@
                                                         <li class=""><a href="/wereldwijd/noord-amerika" data-value="noord-amerika">Noord-Amerika</a></li>
                                                         <li class=""><a href="/wereldwijd/Zuid-amerika" data-value="zuid-amerika">Zuid-Amerika</a></li>
                                                         <li class=""><a href="/wereldwijd/australie-oceanie" data-value="australi&#xEB; / oceani&#xEB;">Australi&#xEB; / Oceani&#xEB;</a></li>
+                                                        <li class=""><a href="/wereldwijd/wintersport" data-value="wintersport">Wintersport</a></li>
                                                 </ul>
                                             </div>
                                     </li>
@@ -337,7 +297,7 @@
                                                         <li class=""><a href="/foto-en-video/laatst-toegevoegd" data-value="laatst toegevoegd">Laatst toegevoegd</a></li>
                                                         <li class=""><a href="/foto-en-video/best-gewaardeerd" data-value="best gewaardeerd">Best gewaardeerd</a></li>
                                                         <li class=""><a href="/foto-en-video/categorieen" data-value="populaire categorie&#xEB;n">Populaire categorie&#xEB;n</a></li>
-                                                        <li class=""><a href="/foto-en-video/weerfoto-van-2018" data-value="weerfoto van het jaar 2018">Weerfoto van het jaar 2018</a></li>
+                                                        <li class=""><a href="/foto-en-video/weerfoto-van-2019" data-value="weerfoto van het jaar 2019">Weerfoto van het jaar 2019</a></li>
                                                         <li class=""><a href="/foto-en-video/" data-value="{myphotoprofile}">{myphotoprofile}</a></li>
                                                         <li class=""><a href="/foto-en-video/toevoegen" data-value="foto/video toevoegen">Foto/video toevoegen</a></li>
                                                 </ul>
@@ -370,8 +330,11 @@
                         
 
 
-<control id='5cdf0a16-039c-4a05-8e1c-54981e87d773' data-control='Search' data-group='' data-properties='{"searchLocations":true,"searchPages":true,"showHistory":true,"showFavourites":true,"onLocationClickAddToMyLocations":false,"onLocationClickRedirectToLocationPage":true}' data-parameters='{}' class='buienradar-control form-wrap'>    <div class="styled-input searchicon">
-        <input type="search" placeholder="&#x2018;wind&#x2019;, &#x2018;Utrecht&#x2019;, &#x2018;Parijs&#x2019;">
+
+<control id='cd8129f6-e028-44ab-ad49-dbaa7a57e9d9' data-control='Search' data-group='' data-properties='{"searchLocations":true,"searchPages":true,"showHistory":true,"showFavourites":true,"onLocationClickAddToMyLocations":false,"onLocationClickRedirectToLocationPage":true}' data-parameters='{}' class='buienradar-control form-wrap'>    <div class="styled-input searchicon ">
+        <div class="search-back hide-all show-mobile show-tabletportrait">&nbsp;</div>
+        <input type="search" placeholder="&#x2018;wind&#x2019;, &#x2018;Utrecht&#x2019;, &#x2018;Parijs&#x2019;" >
+        <div class="search-empty hide-all show-mobile show-tabletportrait">&nbsp;</div>
     </div>
     <div class="submit-wrap">
         <input type="submit" value="search">
@@ -401,7 +364,7 @@
         </div>
     </div>
     <div class="logo-b">
-        <a href="/" itemprop="url"><img src="/resources/images/logor.svg" itemprop="image" alt="Buienradar"></a>
+        <a href="/" itemprop="url"><img src="//cdn.buienradar.nl/resources/images/logor.svg" itemprop="image" alt="Buienradar"></a>
     </div>
 
     <div class="menu-content">
@@ -413,8 +376,11 @@
                     
 
 
-<control id='7512cae0-16e5-49dd-a4b2-933db3fae2bd' data-control='Search' data-group='mobilesearch' data-properties='{"searchLocations":true,"searchPages":true,"showHistory":true,"showFavourites":true,"onLocationClickAddToMyLocations":false,"onLocationClickRedirectToLocationPage":true}' data-parameters='{}' class='buienradar-control form-wrap'>    <div class="styled-input searchicon">
-        <input type="search" placeholder="&#x2018;wind&#x2019;, &#x2018;Utrecht&#x2019;, &#x2018;Parijs&#x2019;">
+
+<control id='1a9ab364-9a2c-4dbb-938b-8e232fc8c941' data-control='Search' data-group='mobilesearch' data-properties='{"searchLocations":true,"searchPages":true,"showHistory":true,"showFavourites":true,"onLocationClickAddToMyLocations":false,"onLocationClickRedirectToLocationPage":true}' data-parameters='{}' class='buienradar-control form-wrap'>    <div class="styled-input searchicon ">
+        <div class="search-back hide-all show-mobile show-tabletportrait">&nbsp;</div>
+        <input type="search" placeholder="&#x2018;wind&#x2019;, &#x2018;Utrecht&#x2019;, &#x2018;Parijs&#x2019;" >
+        <div class="search-empty hide-all show-mobile show-tabletportrait">&nbsp;</div>
     </div>
     <div class="submit-wrap">
         <input type="submit" value="search">
@@ -426,9 +392,9 @@
         </div>
 
         <div class="text-grid">
-            <div class="main-menu-pages" data-activepage="d8d6f175-3edc-4f82-bdc2-fee16e946558">
+            <div class="main-menu-pages" data-activepage="50868e72-dee3-4bc7-bdd1-83154f8d8439">
 
-                    <div class="menu-page menu-be04986f-1d89-49e2-bdd9-8110f2c66f2f ">
+                    <div class="menu-page menu-5aaf8024-e918-46a6-9d4b-a896d1c7bab5 ">
                         <ul class="arrow-links">
                             <li>
                                 <a href="#" class="isgroup reverse-arrow btn-event-backtomain">Terug naar hoofdmenu</a>
@@ -454,7 +420,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="menu-page menu-fe5a9ae6-4056-45a9-bc93-3b4fb0a4b8d2 ">
+                    <div class="menu-page menu-7212f836-3ddd-44d0-a5a8-c4b7785d1fbb ">
                         <ul class="arrow-links">
                             <li>
                                 <a href="#" class="isgroup reverse-arrow btn-event-backtomain">Terug naar hoofdmenu</a>
@@ -467,7 +433,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="menu-page menu-280f0bd9-8b37-40c7-9660-2ae9c16f6dde ">
+                    <div class="menu-page menu-2ec8267a-4f36-4b28-8947-1c91bda5634b ">
                         <ul class="arrow-links">
                             <li>
                                 <a href="#" class="isgroup reverse-arrow btn-event-backtomain">Terug naar hoofdmenu</a>
@@ -491,7 +457,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="menu-page menu-536a4d0e-3179-49e6-b1cc-b60190f352db ">
+                    <div class="menu-page menu-c20bb5c9-1b32-469c-befc-a9c2dc5d3c39 ">
                         <ul class="arrow-links">
                             <li>
                                 <a href="#" class="isgroup reverse-arrow btn-event-backtomain">Terug naar hoofdmenu</a>
@@ -512,7 +478,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="menu-page menu-d366ddcd-0fa5-43ba-98e7-f556bef4b03f ">
+                    <div class="menu-page menu-78bf2f39-c191-4a0b-9774-c0acfbfa01d1 ">
                         <ul class="arrow-links">
                             <li>
                                 <a href="#" class="isgroup reverse-arrow btn-event-backtomain">Terug naar hoofdmenu</a>
@@ -532,7 +498,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="menu-page menu-b17ff5b7-9006-472a-a37b-4bcf869d2002 ">
+                    <div class="menu-page menu-20ea6809-1da9-48f0-a3cb-8fce198a2e45 ">
                         <ul class="arrow-links">
                             <li>
                                 <a href="#" class="isgroup reverse-arrow btn-event-backtomain">Terug naar hoofdmenu</a>
@@ -549,7 +515,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="menu-page menu-74973376-d24b-4f35-b804-5b2cfb092906 ">
+                    <div class="menu-page menu-dbd0e55d-16bd-4ba5-ba2d-f2223191e4b3 ">
                         <ul class="arrow-links">
                             <li>
                                 <a href="#" class="isgroup reverse-arrow btn-event-backtomain">Terug naar hoofdmenu</a>
@@ -561,7 +527,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="menu-page menu-1e1c3fa1-6899-4107-9ba4-b085d21df3f6 ">
+                    <div class="menu-page menu-37f3c1a0-ac03-434f-a293-eef5177db350 ">
                         <ul class="arrow-links">
                             <li>
                                 <a href="#" class="isgroup reverse-arrow btn-event-backtomain">Terug naar hoofdmenu</a>
@@ -579,7 +545,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="menu-page menu-6e7cece1-7834-42c2-b664-27d08c514b2d ">
+                    <div class="menu-page menu-8ed00815-a68b-4268-a134-a97e99593192 ">
                         <ul class="arrow-links">
                             <li>
                                 <a href="#" class="isgroup reverse-arrow btn-event-backtomain">Terug naar hoofdmenu</a>
@@ -607,7 +573,31 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="menu-page menu-e1171135-fb58-4d81-b51f-50d6a7cceca3 ">
+                    <div class="menu-page menu-78711cf5-fc36-460a-8a96-881995d8e81d ">
+                        <ul class="arrow-links">
+                            <li>
+                                <a href="#" class="isgroup reverse-arrow btn-event-backtomain">Terug naar hoofdmenu</a>
+                                <a href="#" class="isgroup open " onclick="return false;">Uitradar</a>
+                                    <ul class="green-menu-links arrow-links">
+                                            <li class=""><a class=" " href="/nederland/uitradar/kaart" data-value="uitjes">Uitjes</a></li>
+                                            <li class="hide-desktop"><a class=" hide-desktop" href="/nederland/uitradar/uitradardisclaimer" data-value="welkom op de uitradar">Welkom op de Uitradar</a></li>
+                                            <li class="hide-desktop"><a class=" hide-desktop" href="/nederland/uitradar/uitradarwinactie" data-value="disclaimer winactie uitradar">Disclaimer Winactie Uitradar</a></li>
+                                    </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu-page menu-11dfc795-49ce-49bd-9c84-5808d3d89f16 ">
+                        <ul class="arrow-links">
+                            <li>
+                                <a href="#" class="isgroup reverse-arrow btn-event-backtomain">Terug naar hoofdmenu</a>
+                                <a href="#" class="isgroup open " onclick="return false;">NK Tegenwindfietsen</a>
+                                    <ul class="green-menu-links arrow-links">
+                                            <li class="hide-desktop"><a class=" hide-desktop" href="/nederland/tegenwindfietsen/kaart" data-value="tegenwind">Tegenwind</a></li>
+                                    </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu-page menu-5c5e7816-1256-4689-850f-1cf6c19e0b8f ">
                         <ul class="arrow-links">
                             <li>
                                 <a href="#" class="isgroup reverse-arrow btn-event-backtomain">Terug naar hoofdmenu</a>
@@ -624,7 +614,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="menu-page menu-8ce09aa7-5c3b-49ee-a32b-f976cb16825b ">
+                    <div class="menu-page menu-29bd714e-2edc-4cda-b28e-07000b7fc35c ">
                         <ul class="arrow-links">
                             <li>
                                 <a href="#" class="isgroup reverse-arrow btn-event-backtomain">Terug naar hoofdmenu</a>
@@ -635,21 +625,21 @@
                                             <li class=""><a class=" " href="/wereldwijd/europa/buienradar" data-value="buienradar">Buienradar</a></li>
                                             <li class=""><a class=" " href="/wereldwijd/europa/buienradar-terugkijken" data-value="buienradar terugkijken">Buienradar terugkijken</a></li>
                                             <li class=""><a class=" " href="/wereldwijd/europa/onweerradar" data-value="onweerradar">Onweerradar</a></li>
-                                            <li class="hide-desktop"><a class=" hide-desktop" href="/wereldwijd/europa/weerbericht" data-value="weerbericht">Weerbericht</a></li>
+                                            <li class=""><a class=" " href="/wereldwijd/europa/weerbericht" data-value="weerbericht">Weerbericht</a></li>
                                             <li class="hide-desktop"><a class=" hide-desktop" href="/wereldwijd/europa/vakantieweer" data-value="vakantie weervideo">Vakantie weervideo</a></li>
                                             <li class=""><a class=" " href="/wereldwijd/europa/weer-per-land" data-value="weer per land">Weer per land</a></li>
                                             <li class=""><a class=" " href="/wereldwijd/europa/7daagse" data-value="7-daagse verwachting">7-daagse verwachting</a></li>
                                             <li class=""><a class=" " href="/wereldwijd/europa/sneeuwradar" data-value="sneeuwradar">Sneeuwradar</a></li>
                                             <li class=""><a class=" " href="/wereldwijd/europa/satelliet" data-value="satelliet">Satelliet</a></li>
                                             <li class=""><a class=" " href="/wereldwijd/europa/satelliet-terugkijken" data-value="satelliet terugkijken">Satelliet terugkijken</a></li>
-                                            <li class=""><a class=" " href="/wereldwijd/europa/zonkracht-eu" data-value="zonkracht (uv)">Zonkracht (UV)</a></li>
+                                            <li class="hide-desktop"><a class=" hide-desktop" href="/wereldwijd/europa/zonkracht-eu" data-value="zonkracht (uv)">Zonkracht (UV)</a></li>
                                             <li class=""><a class=" " href="/wereldwijd/europa/zeetemperatuur" data-value="zeetemperatuur">Zeetemperatuur</a></li>
                                             <li class="hide-desktop"><a class=" hide-desktop" href="/wereldwijd/europa/vakantieweer2" data-value="vakantieweer">Vakantieweer</a></li>
                                     </ul>
                             </li>
                         </ul>
                     </div>
-                    <div class="menu-page menu-0dd6147a-a18d-451d-b7ae-aff652d33d9e ">
+                    <div class="menu-page menu-26e517b3-0b2c-46ce-bc80-d37550e2f2b5 ">
                         <ul class="arrow-links">
                             <li>
                                 <a href="#" class="isgroup reverse-arrow btn-event-backtomain">Terug naar hoofdmenu</a>
@@ -665,7 +655,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="menu-page menu-380da68a-b937-4ed1-833f-fb54f7e4fdf4 ">
+                    <div class="menu-page menu-45cae8b8-2e83-4e74-9ea5-57689db61e63 ">
                         <ul class="arrow-links">
                             <li>
                                 <a href="#" class="isgroup reverse-arrow btn-event-backtomain">Terug naar hoofdmenu</a>
@@ -680,7 +670,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="menu-page menu-678d1567-fde9-434d-a8fd-5109bf31b868 ">
+                    <div class="menu-page menu-6233583e-28e8-43dc-8442-a0261e1d2bd8 ">
                         <ul class="arrow-links">
                             <li>
                                 <a href="#" class="isgroup reverse-arrow btn-event-backtomain">Terug naar hoofdmenu</a>
@@ -695,7 +685,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="menu-page menu-6f45405a-3b0a-4064-81bc-4da825787b6a ">
+                    <div class="menu-page menu-e0c2ab25-6603-45b1-ae76-561ae40d0f00 ">
                         <ul class="arrow-links">
                             <li>
                                 <a href="#" class="isgroup reverse-arrow btn-event-backtomain">Terug naar hoofdmenu</a>
@@ -710,7 +700,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="menu-page menu-436350ac-8abf-423b-8329-bd6ec90bb7fa ">
+                    <div class="menu-page menu-bc89acd6-5064-42d6-8d58-7221af9c8ff4 ">
                         <ul class="arrow-links">
                             <li>
                                 <a href="#" class="isgroup reverse-arrow btn-event-backtomain">Terug naar hoofdmenu</a>
@@ -725,7 +715,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="menu-page menu-d76210ca-fe9e-428c-9823-89ed3c465ad0 ">
+                    <div class="menu-page menu-c983f131-9c66-433f-9c9d-88183f097a6a ">
                         <ul class="arrow-links">
                             <li>
                                 <a href="#" class="isgroup reverse-arrow btn-event-backtomain">Terug naar hoofdmenu</a>
@@ -751,7 +741,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="menu-page menu-18b2debd-8a32-4d25-9363-16bcf96f1ca6 ">
+                    <div class="menu-page menu-255d0d9f-a2cd-442f-9490-886c60fb9025 ">
                         <ul class="arrow-links">
                             <li>
                                 <a href="#" class="isgroup reverse-arrow btn-event-backtomain">Terug naar hoofdmenu</a>
@@ -766,13 +756,15 @@
                                             <li class="hide-desktop"><a class=" hide-desktop" href="/nederland/schaatsen" data-value="schaatsen">Schaatsen</a></li>
                                             <li class="hide-desktop"><a class=" hide-desktop" href="/nederland/winter" data-value="winter">Winter</a></li>
                                             <li class=""><a class=" " href="/nederland/gezondheid" data-value="gezondheid">Gezondheid</a></li>
+                                            <li class=""><a class=" " href="/nederland/uitradar" data-value="uitradar">Uitradar</a></li>
+                                            <li class="hide-desktop"><a class=" hide-desktop" href="/nederland/tegenwindfietsen" data-value="nk tegenwindfietsen">NK Tegenwindfietsen</a></li>
                                             <li class=""><a class=" " href="/nederland/evenementen" data-value="evenementen">Evenementen</a></li>
                                             <li class="hide-desktop"><a class=" hide-desktop" href="/nederland/muggen" data-value="muggen redirect">Muggen redirect</a></li>
                                     </ul>
                             </li>
                         </ul>
                     </div>
-                    <div class="menu-page menu-c870aa15-91b3-4db8-8db7-80855e9c3a9d ">
+                    <div class="menu-page menu-76139e0a-bdd2-4195-ae5e-03a9b4522356 ">
                         <ul class="arrow-links">
                             <li>
                                 <a href="#" class="isgroup reverse-arrow btn-event-backtomain">Terug naar hoofdmenu</a>
@@ -784,12 +776,12 @@
                                             <li class=""><a class=" " href="/wereldwijd/noord-amerika" data-value="noord-amerika">Noord-Amerika</a></li>
                                             <li class=""><a class=" " href="/wereldwijd/Zuid-amerika" data-value="zuid-amerika">Zuid-Amerika</a></li>
                                             <li class=""><a class=" " href="/wereldwijd/australie-oceanie" data-value="australi&#xEB; / oceani&#xEB;">Australi&#xEB; / Oceani&#xEB;</a></li>
-                                            <li class="hide-desktop"><a class=" hide-desktop" href="/wereldwijd/wintersport" data-value="wintersport">Wintersport</a></li>
+                                            <li class=""><a class=" " href="/wereldwijd/wintersport" data-value="wintersport">Wintersport</a></li>
                                     </ul>
                             </li>
                         </ul>
                     </div>
-                    <div class="menu-page menu-d8d6f175-3edc-4f82-bdc2-fee16e946558 show">
+                    <div class="menu-page menu-50868e72-dee3-4bc7-bdd1-83154f8d8439 show">
                         <ul class="arrow-links">
                             <li>
                                 <a href="#" class="isgroup reverse-arrow btn-event-backtomain">Terug naar hoofdmenu</a>
@@ -798,7 +790,6 @@
                                             <li class=""><a class=" " href="/overbuienradar/contact" data-value="contact">Contact</a></li>
                                             <li class=""><a class=" " href="/overbuienradar/privacy" data-value="privacy- en cookiestatement">Privacy- en cookiestatement</a></li>
                                             <li class=""><a class=" " href="/overbuienradar/disclaimer" data-value="disclaimer">Disclaimer</a></li>
-                                            <li class="hide-desktop"><a class=" hide-desktop" href="/overbuienradar/cookies" data-value="cookiebeleid">Cookiebeleid</a></li>
                                             <li class="hide-desktop"><a class=" hide-desktop" href="/overbuienradar/nieuwe-versie-buienradar" data-value="wat is er nieuw aan de website">Wat is er nieuw aan de website</a></li>
                                             <li class=""><a class=" " href="/overbuienradar/app" data-value="buienradar apps">Buienradar Apps</a></li>
                                             <li class=""><a class=" " href="/overbuienradar/promo" data-value="buienradar promo&#x27;s">Buienradar Promo&#x27;s</a></li>
@@ -814,7 +805,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="menu-page menu-8095a4ae-1926-42da-98fa-efa29a364a5c ">
+                    <div class="menu-page menu-750d996c-e72d-4b83-a675-b3d1933e3063 ">
                         <ul class="arrow-links">
                             <li>
                                 <a href="#" class="isgroup reverse-arrow btn-event-backtomain">Terug naar hoofdmenu</a>
@@ -831,7 +822,7 @@
                                             <li class="hide-desktop"><a class=" hide-desktop" href="/foto-en-video/meeste-bijdragen" data-value="meeste bijdragen">Meeste bijdragen</a></li>
                                             <li class=""><a class=" " href="/foto-en-video/categorieen" data-value="populaire categorie&#xEB;n">Populaire categorie&#xEB;n</a></li>
                                             <li class="hide-desktop"><a class=" hide-desktop" href="/foto-en-video/categorie" data-value="categorie">Categorie</a></li>
-                                            <li class=""><a class=" " href="/foto-en-video/weerfoto-van-2018" data-value="weerfoto van het jaar 2018">Weerfoto van het jaar 2018</a></li>
+                                            <li class=""><a class=" " href="/foto-en-video/weerfoto-van-2019" data-value="weerfoto van het jaar 2019">Weerfoto van het jaar 2019</a></li>
                                             <li class=""><a class=" " href="/foto-en-video/" data-value="{myphotoprofile}">{myphotoprofile}</a></li>
                                             <li class="hide-desktop"><a class=" hide-desktop" href="/foto-en-video/fotos-en-videos" data-value="foto&#x27;s en video&#x27;s per gebruiker">Foto&#x27;s en video&#x27;s per gebruiker</a></li>
                                             <li class=""><a class=" " href="/foto-en-video/toevoegen" data-value="foto/video toevoegen">Foto/video toevoegen</a></li>
@@ -861,120 +852,126 @@
 
                     
 
-    <li class="main-mobile-menu-item depth-1 menu-18b2debd-8a32-4d25-9363-16bcf96f1ca6  menufromhq">
+    <li class="main-mobile-menu-item depth-1 menu-255d0d9f-a2cd-442f-9490-886c60fb9025  menufromhq">
                 <a class=" accordion-opener isgroup btn-event-togglegroup" href="#">Nederland</a>
                 <div class="dropdown">
                     <ul class="arrow-links">
                         
 
-    <li class="main-mobile-menu-item depth-2 menu-be04986f-1d89-49e2-bdd9-8110f2c66f2f  menufromhq">
-                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/nederland/weerbericht" data-guid="be04986f-1d89-49e2-bdd9-8110f2c66f2f">Actueel</a>
+    <li class="main-mobile-menu-item depth-2 menu-5aaf8024-e918-46a6-9d4b-a896d1c7bab5  menufromhq">
+                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/nederland/weerbericht" data-guid="5aaf8024-e918-46a6-9d4b-a896d1c7bab5">Actueel</a>
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-fe5a9ae6-4056-45a9-bc93-3b4fb0a4b8d2  menufromhq">
-                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/nederland/verwachtingen" data-guid="fe5a9ae6-4056-45a9-bc93-3b4fb0a4b8d2">Verwachtingen</a>
+    <li class="main-mobile-menu-item depth-2 menu-7212f836-3ddd-44d0-a5a8-c4b7785d1fbb  menufromhq">
+                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/nederland/verwachtingen" data-guid="7212f836-3ddd-44d0-a5a8-c4b7785d1fbb">Verwachtingen</a>
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-280f0bd9-8b37-40c7-9660-2ae9c16f6dde  menufromhq">
-                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/nederland/neerslag" data-guid="280f0bd9-8b37-40c7-9660-2ae9c16f6dde">Neerslag</a>
+    <li class="main-mobile-menu-item depth-2 menu-2ec8267a-4f36-4b28-8947-1c91bda5634b  menufromhq">
+                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/nederland/neerslag" data-guid="2ec8267a-4f36-4b28-8947-1c91bda5634b">Neerslag</a>
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-536a4d0e-3179-49e6-b1cc-b60190f352db  menufromhq">
-                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/nederland/zon-en-wolken" data-guid="536a4d0e-3179-49e6-b1cc-b60190f352db">Zon en wolken</a>
+    <li class="main-mobile-menu-item depth-2 menu-c20bb5c9-1b32-469c-befc-a9c2dc5d3c39  menufromhq">
+                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/nederland/zon-en-wolken" data-guid="c20bb5c9-1b32-469c-befc-a9c2dc5d3c39">Zon en wolken</a>
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-d366ddcd-0fa5-43ba-98e7-f556bef4b03f  menufromhq">
-                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/nederland/temperatuur" data-guid="d366ddcd-0fa5-43ba-98e7-f556bef4b03f">Temperatuur</a>
+    <li class="main-mobile-menu-item depth-2 menu-78bf2f39-c191-4a0b-9774-c0acfbfa01d1  menufromhq">
+                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/nederland/temperatuur" data-guid="78bf2f39-c191-4a0b-9774-c0acfbfa01d1">Temperatuur</a>
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-b17ff5b7-9006-472a-a37b-4bcf869d2002  menufromhq">
-                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/nederland/wind" data-guid="b17ff5b7-9006-472a-a37b-4bcf869d2002">Wind</a>
+    <li class="main-mobile-menu-item depth-2 menu-20ea6809-1da9-48f0-a3cb-8fce198a2e45  menufromhq">
+                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/nederland/wind" data-guid="20ea6809-1da9-48f0-a3cb-8fce198a2e45">Wind</a>
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-74973376-d24b-4f35-b804-5b2cfb092906 hide-desktop menufromhq">
-                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/nederland/schaatsen" data-guid="74973376-d24b-4f35-b804-5b2cfb092906">Schaatsen</a>
+    <li class="main-mobile-menu-item depth-2 menu-dbd0e55d-16bd-4ba5-ba2d-f2223191e4b3 hide-desktop menufromhq">
+                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/nederland/schaatsen" data-guid="dbd0e55d-16bd-4ba5-ba2d-f2223191e4b3">Schaatsen</a>
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-1e1c3fa1-6899-4107-9ba4-b085d21df3f6 hide-desktop menufromhq">
-                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/nederland/winter" data-guid="1e1c3fa1-6899-4107-9ba4-b085d21df3f6">Winter</a>
+    <li class="main-mobile-menu-item depth-2 menu-37f3c1a0-ac03-434f-a293-eef5177db350 hide-desktop menufromhq">
+                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/nederland/winter" data-guid="37f3c1a0-ac03-434f-a293-eef5177db350">Winter</a>
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-6e7cece1-7834-42c2-b664-27d08c514b2d  menufromhq">
-                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/nederland/gezondheid" data-guid="6e7cece1-7834-42c2-b664-27d08c514b2d">Gezondheid</a>
+    <li class="main-mobile-menu-item depth-2 menu-8ed00815-a68b-4268-a134-a97e99593192  menufromhq">
+                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/nederland/gezondheid" data-guid="8ed00815-a68b-4268-a134-a97e99593192">Gezondheid</a>
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-e1171135-fb58-4d81-b51f-50d6a7cceca3  menufromhq">
-                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/nederland/evenementen" data-guid="e1171135-fb58-4d81-b51f-50d6a7cceca3">Evenementen</a>
+    <li class="main-mobile-menu-item depth-2 menu-78711cf5-fc36-460a-8a96-881995d8e81d  menufromhq">
+                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/nederland/uitradar" data-guid="78711cf5-fc36-460a-8a96-881995d8e81d">Uitradar</a>
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-208144c6-9fa5-43b9-af16-ca73ab7485ab hide-desktop menufromhq">
+    <li class="main-mobile-menu-item depth-2 menu-11dfc795-49ce-49bd-9c84-5808d3d89f16 hide-desktop menufromhq">
+                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/nederland/tegenwindfietsen" data-guid="11dfc795-49ce-49bd-9c84-5808d3d89f16">NK Tegenwindfietsen</a>
+    </li>
+    <li class="main-mobile-menu-item depth-2 menu-5c5e7816-1256-4689-850f-1cf6c19e0b8f  menufromhq">
+                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/nederland/evenementen" data-guid="5c5e7816-1256-4689-850f-1cf6c19e0b8f">Evenementen</a>
+    </li>
+    <li class="main-mobile-menu-item depth-2 menu-7a4ddf3b-90d3-4338-a67c-b411b31f8e57 hide-desktop menufromhq">
     </li>
 
 
                     </ul>
                 </div>
     </li>
-    <li class="main-mobile-menu-item depth-1 menu-c870aa15-91b3-4db8-8db7-80855e9c3a9d  menufromhq">
+    <li class="main-mobile-menu-item depth-1 menu-76139e0a-bdd2-4195-ae5e-03a9b4522356  menufromhq">
                 <a class=" accordion-opener isgroup btn-event-togglegroup" href="#">Wereldwijd</a>
                 <div class="dropdown">
                     <ul class="arrow-links">
                         
 
-    <li class="main-mobile-menu-item depth-2 menu-8ce09aa7-5c3b-49ee-a32b-f976cb16825b  menufromhq">
-                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/wereldwijd/europa" data-guid="8ce09aa7-5c3b-49ee-a32b-f976cb16825b">Europa</a>
+    <li class="main-mobile-menu-item depth-2 menu-29bd714e-2edc-4cda-b28e-07000b7fc35c  menufromhq">
+                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/wereldwijd/europa" data-guid="29bd714e-2edc-4cda-b28e-07000b7fc35c">Europa</a>
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-0dd6147a-a18d-451d-b7ae-aff652d33d9e  menufromhq">
-                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/wereldwijd/afrika" data-guid="0dd6147a-a18d-451d-b7ae-aff652d33d9e">Afrika</a>
+    <li class="main-mobile-menu-item depth-2 menu-26e517b3-0b2c-46ce-bc80-d37550e2f2b5  menufromhq">
+                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/wereldwijd/afrika" data-guid="26e517b3-0b2c-46ce-bc80-d37550e2f2b5">Afrika</a>
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-380da68a-b937-4ed1-833f-fb54f7e4fdf4  menufromhq">
-                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/wereldwijd/azie" data-guid="380da68a-b937-4ed1-833f-fb54f7e4fdf4">Azi&#xEB;</a>
+    <li class="main-mobile-menu-item depth-2 menu-45cae8b8-2e83-4e74-9ea5-57689db61e63  menufromhq">
+                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/wereldwijd/azie" data-guid="45cae8b8-2e83-4e74-9ea5-57689db61e63">Azi&#xEB;</a>
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-678d1567-fde9-434d-a8fd-5109bf31b868  menufromhq">
-                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/wereldwijd/noord-amerika" data-guid="678d1567-fde9-434d-a8fd-5109bf31b868">Noord-Amerika</a>
+    <li class="main-mobile-menu-item depth-2 menu-6233583e-28e8-43dc-8442-a0261e1d2bd8  menufromhq">
+                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/wereldwijd/noord-amerika" data-guid="6233583e-28e8-43dc-8442-a0261e1d2bd8">Noord-Amerika</a>
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-6f45405a-3b0a-4064-81bc-4da825787b6a  menufromhq">
-                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/wereldwijd/Zuid-amerika" data-guid="6f45405a-3b0a-4064-81bc-4da825787b6a">Zuid-Amerika</a>
+    <li class="main-mobile-menu-item depth-2 menu-e0c2ab25-6603-45b1-ae76-561ae40d0f00  menufromhq">
+                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/wereldwijd/Zuid-amerika" data-guid="e0c2ab25-6603-45b1-ae76-561ae40d0f00">Zuid-Amerika</a>
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-436350ac-8abf-423b-8329-bd6ec90bb7fa  menufromhq">
-                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/wereldwijd/australie-oceanie" data-guid="436350ac-8abf-423b-8329-bd6ec90bb7fa">Australi&#xEB; / Oceani&#xEB;</a>
+    <li class="main-mobile-menu-item depth-2 menu-bc89acd6-5064-42d6-8d58-7221af9c8ff4  menufromhq">
+                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/wereldwijd/australie-oceanie" data-guid="bc89acd6-5064-42d6-8d58-7221af9c8ff4">Australi&#xEB; / Oceani&#xEB;</a>
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-d76210ca-fe9e-428c-9823-89ed3c465ad0 hide-desktop menufromhq">
-                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/wereldwijd/wintersport" data-guid="d76210ca-fe9e-428c-9823-89ed3c465ad0">Wintersport</a>
+    <li class="main-mobile-menu-item depth-2 menu-c983f131-9c66-433f-9c9d-88183f097a6a  menufromhq">
+                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/wereldwijd/wintersport" data-guid="c983f131-9c66-433f-9c9d-88183f097a6a">Wintersport</a>
     </li>
 
 
                     </ul>
                 </div>
     </li>
-    <li class="main-mobile-menu-item depth-1 menu-8095a4ae-1926-42da-98fa-efa29a364a5c  menufromhq">
-                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/foto-en-video" data-guid="8095a4ae-1926-42da-98fa-efa29a364a5c">Foto en video</a>
+    <li class="main-mobile-menu-item depth-1 menu-750d996c-e72d-4b83-a675-b3d1933e3063  menufromhq">
+                <a class=" accordion-opener isgroup btn-event-showpage" onClick="" href="/foto-en-video" data-guid="750d996c-e72d-4b83-a675-b3d1933e3063">Foto en video</a>
                 <div class="dropdown">
                     <ul class="arrow-links">
                         
 
-    <li class="main-mobile-menu-item depth-2 menu-f28a1634-ffd4-49ba-9e90-9b2eae678f48 hide-desktop menufromhq">
+    <li class="main-mobile-menu-item depth-2 menu-fb8aa138-1347-4c86-ae7d-daf1efc027bf hide-desktop menufromhq">
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-f9866422-6df7-4c44-8d79-34b19cc49a0a hide-desktop menufromhq">
+    <li class="main-mobile-menu-item depth-2 menu-a33c9fa3-ac19-4eb5-8a0e-761fa982dd61 hide-desktop menufromhq">
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-302ec8a3-2699-4787-ba92-d52f709fca25 hide-desktop menufromhq">
+    <li class="main-mobile-menu-item depth-2 menu-91b7bc57-1d9b-4355-b18f-d522bbf5d1fe hide-desktop menufromhq">
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-a5bd8708-5873-4b6f-a665-2ca35afcc93f hide-desktop menufromhq">
+    <li class="main-mobile-menu-item depth-2 menu-d07ea43e-482c-49be-b192-1a622b0856aa hide-desktop menufromhq">
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-409605cc-3892-42fa-a76a-6aa7b1318589 hide-desktop menufromhq">
+    <li class="main-mobile-menu-item depth-2 menu-09693697-6648-4458-9c09-5bec049c1ec1 hide-desktop menufromhq">
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-27fce96e-f4da-4004-aed1-51c719191636  menufromhq">
+    <li class="main-mobile-menu-item depth-2 menu-d0f10d23-e128-44c9-a5f3-d85891aa3dc5  menufromhq">
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-9fa8461e-834b-4bb2-b6a8-ab4e1da83e2d  menufromhq">
+    <li class="main-mobile-menu-item depth-2 menu-df39fa4e-5cba-443d-bd74-34decc23f881  menufromhq">
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-dab66226-540e-4213-8134-2deea4bcdd69  menufromhq">
+    <li class="main-mobile-menu-item depth-2 menu-3338cb99-56e3-4925-831c-ac485d854eb8  menufromhq">
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-e6a435a7-2e3c-4bd4-b5e6-a2707bff6082 hide-desktop menufromhq">
+    <li class="main-mobile-menu-item depth-2 menu-4532c974-6e25-4ae7-ba5b-d8c7781ce83d hide-desktop menufromhq">
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-418208db-fb47-4a15-8846-8c0ec95e1243  menufromhq">
+    <li class="main-mobile-menu-item depth-2 menu-39de25e0-53e5-4051-9006-43982392ff33  menufromhq">
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-9232738d-5a85-4ea6-9953-64581402bfc4 hide-desktop menufromhq">
+    <li class="main-mobile-menu-item depth-2 menu-d0df4392-75a4-4b2c-a81c-3e17ae469b69 hide-desktop menufromhq">
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-abbc0e96-96aa-4527-8456-55adff27608b  menufromhq">
+    <li class="main-mobile-menu-item depth-2 menu-5d1970c8-4bc1-4d3a-bacc-9c33af80c4db  menufromhq">
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-5b5f2d4a-d3ed-45b2-8755-2ab3899ede13  menufromhq">
+    <li class="main-mobile-menu-item depth-2 menu-27d0ca47-db43-4b7f-8f04-2418ce65ab15  menufromhq">
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-5828eb03-4a6c-4aac-b1f2-5141b9bb6eb0 hide-desktop menufromhq">
+    <li class="main-mobile-menu-item depth-2 menu-8ebdb842-80a3-4724-bab1-2d5ba1322c3f hide-desktop menufromhq">
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-f941d3fb-a113-4d81-ba02-6562c59c6b9c  menufromhq">
+    <li class="main-mobile-menu-item depth-2 menu-10e367ac-470f-45a8-bcfa-ad5ce1a352df  menufromhq">
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-88736519-49e8-44aa-9f73-bbcff56bde5a hide-desktop menufromhq">
+    <li class="main-mobile-menu-item depth-2 menu-ed51ab1c-0281-4efa-a2a0-cbc10edd5bac hide-desktop menufromhq">
     </li>
-    <li class="main-mobile-menu-item depth-2 menu-61c8e6ac-544a-4f5f-bb3b-24bab95553da hide-desktop menufromhq">
+    <li class="main-mobile-menu-item depth-2 menu-e93444d7-1221-4fba-9243-096a127072ac hide-desktop menufromhq">
     </li>
 
 
@@ -990,7 +987,7 @@
                             <div class="radar-grid">
                                         <a class="radar " href="/nederland/neerslag/buienradar">
                                             <figure class="circle">
-                                                <img class="icon" src="/resources/svg/regen.svg" alt="Buienradar" />
+                                                <img class="icon" src="//cdn.buienradar.nl/resources/svg/regen.svg" alt="Buienradar" />
                                                 <div class="checkmark-container">
                                                     <div class="checkmark"></div>
                                                 </div>
@@ -999,34 +996,34 @@
                                         </a>
                                         <a class="radar " href="/nederland/neerslag/motregenradar">
                                             <figure class="circle">
-                                                <img class="icon" src="/resources/svg/motregen.svg" alt="Motregen" />
+                                                <img class="icon" src="//cdn.buienradar.nl/resources/svg/motregen.svg" alt="Motregen" />
                                                 <div class="checkmark-container">
                                                     <div class="checkmark"></div>
                                                 </div>
                                             </figure>
                                             <figcaption class="text">Motregen</figcaption>
                                         </a>
-                                        <a class="radar " href="/nederland/neerslag/onweerradar">
+                                        <a class="radar " href="/nederland/neerslag/sneeuwradar">
                                             <figure class="circle">
-                                                <img class="icon" src="/resources/svg/onweer.svg" alt="Onweer" />
+                                                <img class="icon" src="//cdn.buienradar.nl/resources/svg/snow.svg" alt="Sneeuw" />
                                                 <div class="checkmark-container">
                                                     <div class="checkmark"></div>
                                                 </div>
                                             </figure>
-                                            <figcaption class="text">Onweer</figcaption>
+                                            <figcaption class="text">Sneeuw</figcaption>
                                         </a>
                                         <a class="radar " href="/nederland/zon-en-wolken/zonradar">
                                             <figure class="circle">
-                                                <img class="icon" src="/resources/svg/zon.svg" alt="Zonradar" />
+                                                <img class="icon" src="//cdn.buienradar.nl/resources/svg/zon.svg" alt="Zon" />
                                                 <div class="checkmark-container">
                                                     <div class="checkmark"></div>
                                                 </div>
                                             </figure>
-                                            <figcaption class="text">Zonradar</figcaption>
+                                            <figcaption class="text">Zon</figcaption>
                                         </a>
                                         <a class="radar " href="/nederland/zon-en-wolken/satelliet">
                                             <figure class="circle">
-                                                <img class="icon" src="/resources/svg/sateliet.svg" alt="Satelliet" />
+                                                <img class="icon" src="//cdn.buienradar.nl/resources/svg/sateliet.svg" alt="Satelliet" />
                                                 <div class="checkmark-container">
                                                     <div class="checkmark"></div>
                                                 </div>
@@ -1035,7 +1032,7 @@
                                         </a>
                                         <a class="radar " href="/nederland/temperatuur/actuele-temperatuur">
                                             <figure class="circle">
-                                                <img class="icon" src="/resources/svg/temperatuur.svg" alt="Temperatuur" />
+                                                <img class="icon" src="//cdn.buienradar.nl/resources/svg/temperatuur.svg" alt="Temperatuur" />
                                                 <div class="checkmark-container">
                                                     <div class="checkmark"></div>
                                                 </div>
@@ -1044,7 +1041,7 @@
                                         </a>
                                         <a class="radar " href="/nederland/temperatuur/gevoelstemperatuur">
                                             <figure class="circle">
-                                                <img class="icon" src="/resources/svg/gevoelstemperatuur.svg" alt="Gevoelstemp." />
+                                                <img class="icon" src="//cdn.buienradar.nl/resources/svg/gevoelstemperatuur.svg" alt="Gevoelstemp." />
                                                 <div class="checkmark-container">
                                                     <div class="checkmark"></div>
                                                 </div>
@@ -1053,7 +1050,7 @@
                                         </a>
                                         <a class="radar " href="/nederland/wind/actuele-wind">
                                             <figure class="circle">
-                                                <img class="icon" src="/resources/svg/wind.svg" alt="Wind" />
+                                                <img class="icon" src="//cdn.buienradar.nl/resources/svg/wind.svg" alt="Wind" />
                                                 <div class="checkmark-container">
                                                     <div class="checkmark"></div>
                                                 </div>
@@ -1062,34 +1059,34 @@
                                         </a>
                                         <a class="radar " href="/nederland/zon-en-wolken/zicht-en-mist">
                                             <figure class="circle">
-                                                <img class="icon" src="/resources/svg/mist.svg" alt="Mist" />
+                                                <img class="icon" src="//cdn.buienradar.nl/resources/svg/mist.svg" alt="Mist" />
                                                 <div class="checkmark-container">
                                                     <div class="checkmark"></div>
                                                 </div>
                                             </figure>
                                             <figcaption class="text">Mist</figcaption>
                                         </a>
-                                        <a class="radar " href="/nederland/neerslag/sneeuwradar">
-                                            <figure class="circle">
-                                                <img class="icon" src="/resources/svg/snow.svg" alt="Sneeuwradar" />
-                                                <div class="checkmark-container">
-                                                    <div class="checkmark"></div>
-                                                </div>
-                                            </figure>
-                                            <figcaption class="text">Sneeuwradar</figcaption>
-                                        </a>
                                         <a class="radar " href="/nederland/temperatuur/grondtemperatuur">
                                             <figure class="circle">
-                                                <img class="icon" src="/resources/svg/temp-grond.svg" alt="Grondtemp." />
+                                                <img class="icon" src="//cdn.buienradar.nl/resources/svg/temp-grond.svg" alt="Grondtemp." />
                                                 <div class="checkmark-container">
                                                     <div class="checkmark"></div>
                                                 </div>
                                             </figure>
                                             <figcaption class="text">Grondtemp.</figcaption>
                                         </a>
+                                        <a class="radar " href="/nederland/neerslag/onweerradar">
+                                            <figure class="circle">
+                                                <img class="icon" src="//cdn.buienradar.nl/resources/svg/onweer.svg" alt="Onweer" />
+                                                <div class="checkmark-container">
+                                                    <div class="checkmark"></div>
+                                                </div>
+                                            </figure>
+                                            <figcaption class="text">Onweer</figcaption>
+                                        </a>
                                         <a class="radar " href="/nederland/zon-en-wolken/zonkracht-uv">
                                             <figure class="circle">
-                                                <img class="icon" src="/resources/svg/uv.svg" alt="UV" />
+                                                <img class="icon" src="//cdn.buienradar.nl/resources/svg/uv.svg" alt="UV" />
                                                 <div class="checkmark-container">
                                                     <div class="checkmark"></div>
                                                 </div>
@@ -1098,16 +1095,25 @@
                                         </a>
                                         <a class="radar " href="/nederland/evenementen/bbq-radar">
                                             <figure class="circle">
-                                                <img class="icon" src="/resources/svg/bbq.svg" alt="BBQ" />
+                                                <img class="icon" src="//cdn.buienradar.nl/resources/svg/bbq.svg" alt="BBQ" />
                                                 <div class="checkmark-container">
                                                     <div class="checkmark"></div>
                                                 </div>
                                             </figure>
                                             <figcaption class="text">BBQ</figcaption>
                                         </a>
+                                        <a class="radar " href="/nederland/uitradar/kaart">
+                                            <figure class="circle">
+                                                <img class="icon" src="//cdn.buienradar.nl/resources/images/icons/events/voordeeluitjes.png" alt="Uitradar" />
+                                                <div class="checkmark-container">
+                                                    <div class="checkmark"></div>
+                                                </div>
+                                            </figure>
+                                            <figcaption class="text">Uitradar</figcaption>
+                                        </a>
                                         <a class="radar " href="/nederland/gezondheid/pollen">
                                             <figure class="circle">
-                                                <img class="icon" src="/resources/svg/pollen.svg" alt="Pollen" />
+                                                <img class="icon" src="//cdn.buienradar.nl/resources/svg/pollen.svg" alt="Pollen" />
                                                 <div class="checkmark-container">
                                                     <div class="checkmark"></div>
                                                 </div>
@@ -1116,7 +1122,7 @@
                                         </a>
                                         <a class="radar " href="/nederland/gezondheid/muggenradar">
                                             <figure class="circle">
-                                                <img class="icon" src="/resources/svg/mug.svg" alt="Muggen" />
+                                                <img class="icon" src="//cdn.buienradar.nl/resources/svg/mug.svg" alt="Muggen" />
                                                 <div class="checkmark-container">
                                                     <div class="checkmark"></div>
                                                 </div>
@@ -1136,18 +1142,12 @@
     window.buienradar.MainMenu = new window.buienradar.controls.MainMenu();
     window.buienradar.MobileMenu = new window.buienradar.controls.MobileMenu($('#header-b'));
 </script>
+
 <div class="spec-block tablet">
     <div class="container">
         <div class="center">
             <div id="adholder_headerSmall" class="adholder">
                 <div id='br-ad-header-small'>
-                    <script type='text/javascript'>
-                        if (window.innerWidth < 768) {
-                            googletag.cmd.push(function () {
-                                googletag.display('br-ad-header-small');
-                            });
-                        }
-                    </script>
                 </div>
             </div>
         </div>
@@ -1166,29 +1166,29 @@
 
             <div id="layoutTopHolder"></div>
             
-            <main id="main" role="main">
-    <div class="container">
-        <section id="content">
-                            <div class="control-block control-block-pagetitle    " data-debug="PageTitle">
+                <main id="main" role="main">
+        <div class="container">
+            <section id="content">
+                                <div class="control-block control-block-pagetitle    " data-debug="PageTitle">
                     
-<div id="2e13c895-896b-4e74-86b3-b17164c4ed1f" class="page-title">
+<div id="13d34e94-dba7-488d-9f3f-b4083ca35a46" class="page-title">
     <h2>Opgevraagde pagina niet gevonden (Code 404)</h2>
 </div>
                 </div>
 
-            <div class="block-wrapper">
-                <div class="overview-block">
-                                    <div class="control-block control-block-contentloader    " data-debug="ContentLoader">
+                <div class="block-wrapper">
+                    <div class="overview-block">
+                                        <div class="control-block control-block-contentloader    " data-debug="ContentLoader">
                     <div class="content-loader">
-<!-- ContentLoader:: mcache:5, rcache:15, uri: //ApiBaseUrl/data/content/1.0/hqcontent/html/bypermalink/page/error-404-not-found-nl -->
-<h1>Pagina niet gevonden</h1><h3>Er is iets misgegaan bij het opvragen van deze pagina</h3><p>Het kan zijn dat de pagina die je&nbsp;zoekt niet meer bestaat. Daarnaast kan de pagina verplaatst zijn en werkt jouw ingestelde&nbsp;<strong>bookmark</strong> (bewaarde webpagina) momenteel niet meer.</p><h3>Wat kun je doen?</h3><p>Als je op zoek bent naar een bepaalde radar of weerkaart, dan&nbsp;kan je gebruik maken van de <strong>zoekbalk</strong> rechts bovenin de Buienradar pagina.</p><p>Het kan ook zijn dat er een typefout staat in de pagina URL (internetadres), controleer deze en probeer het zonder typefout nogmaals.</p><h3>Meest&nbsp;gezochte pagina&rsquo;s</h3><ul class="links"><li><a class="link" href="../../../">Buienradar homepage</a></li><li><a class="link" href="../../../nederland/neerslag/buienradar/3uurs">Buienradar 3 uur vooruit</a></li><li><a class="link" href="../../../nederland/neerslag/buienradar/24uurs">Buienradar 24 uur vooruit</a></li><li><a class="link" href="../../../nederland/zon-en-wolken/satelliet">Satelliet Nederland</a></li><li><a class="link" href="../../../nederland/temperatuur/actuele-temperatuur">Actuele temperatuur</a></li></ul>
+<!-- ContentLoader:: mcache:5, rcache:15, uri: //DataApiBaseUrl/1.0/content/html/bypermalink/page/error-404-not-found-nl?renewCache=falsel -->
+
 </div>
 
                 </div>
 
-                </div>
-                <aside class="side-content">
-                                   <div class="control-block control-block-submenu    " data-debug="SubMenu">
+                    </div>
+                    <aside class="side-content">
+                                        <div class="control-block control-block-submenu    " data-debug="SubMenu">
                     
     <ul class="overview-list submenu" id="subMenu">
                     <li class=" ">
@@ -1228,52 +1228,178 @@
 
                 </div>
 
-                    <div id="adholderContainerSubContent" class="adholder-subcontent">
-                       
-                    </div>
-                </aside>
-            </div>
-        </section>
-        <aside class="aside sticky">
-                            <div class="control-block control-block-linklist    " data-debug="LinkList">
-                    
-<div id="52b5486c-70dc-47b4-ae54-420fdcfcf647" class="linklist">
-    <h1>Meest bezocht</h1>
-        <a class="link" href="/nederland/weerbericht" target="_self">Actueel weerbericht</a>
-        <a class="link" href="/nederland/weerbericht/weerstations" target="_self">Nu kaart en weerstations</a>
-        <a class="link" href="/wereldwijd/europa/7daagse/wind" target="_self">7-daagse wind en luchtdruk</a>
-</div>
-                </div>
+                        <div id="autoNativeContainer">
+                            <div id='br-ad-advertorial'>
+                            </div>
+                        </div>
 
-            <div id="adholderContainerSidebar">
-                <div id="adholder_sidebar">
-                    <div id='br-ad-sidebar'>
+                        <div id="adholderContainerSubContent" class="adholder-subcontent">
+                            <div id="adholder_subcontent" class="adholder">
+                                <div id='br-ad-subcontent'>
+                                </div>
+                            </div>
+                        </div>
+
                         <script type='text/javascript'>
-                            if (window.innerWidth >= 1024) {
-                                googletag.cmd.push(function () { googletag.display('br-ad-sidebar'); });
+                            if (window.dfpType === "index" && buienradar.country === "NL") // show advertorial
+                            {
+                                $(document).ready(function () {
+                                    $("#adholderContainerSubContent").remove(); // remove regular subcontent banner
+                                });
+
+                                if (window.innerWidth >= 1024) {
+
+                                    googletag.cmd.push(function () {
+                                        googletag.defineSlot(window.buienradar.ads.getSlot(), [[336, 400]], 'br-ad-advertorial')
+                                            .setTargeting('pos', 'advertorial1')
+                                            .setTargeting('hpto', window.hptoState)
+                                            .setTargeting('creative', 'rich')
+                                            .addService(googletag.pubads());
+                                    });
+
+                                    googletag.cmd.push(function () { googletag.display('br-ad-advertorial'); });
+
+                                }
+                            }
+                            else // show regular rectangle
+                            {
+                                $(document).ready(function () { // remove autonative containers
+                                    $("#autoNativeContainer").remove();
+                                });
+
+
+                                if (window.innerWidth >= 1024 && window.innerWidth < 1280) {
+                                    googletag.cmd.push(function () {
+                                        googletag.defineSlot(window.buienradar.ads.getSlot(), [[300, 250], [300, 600], [120, 600], [160, 600]], 'br-ad-subcontent')
+                                            .setTargeting('pos', 'rect1')
+                                            .setTargeting('hpto', window.hptoState)
+                                            .setTargeting('creative', 'rich')
+                                            .addService(googletag.pubads());
+                                    });
+                                    googletag.cmd.push(function () { googletag.display('br-ad-subcontent'); });
+                                }
+
+                                if (window.innerWidth >= 1280) {
+                                    googletag.cmd.push(function () {
+                                        googletag.defineSlot(window.buienradar.ads.getSlot(), [[300, 250], [336, 280], [300, 600], [120, 600], [160, 600]], 'br-ad-subcontent')
+                                            .setTargeting('pos', 'rect1')
+                                            .setTargeting('hpto', window.hptoState)
+                                            .setTargeting('creative', 'rich')
+                                            .addService(googletag.pubads());
+                                    });
+                                    googletag.cmd.push(function () { googletag.display('br-ad-subcontent'); });
+                                }
                             }
                         </script>
+                    </aside>
+                </div>
+            </section>
+            <aside class="aside sticky">
+                                <div class="control-block control-block-linklist    " data-debug="LinkList">
+                    
+<div id="96223f1c-3126-40a0-81bd-b10c34b16cfe" class="linklist">
+        <h1>Meest bezocht</h1>
+                <a class="link" href="/nederland/weerbericht" target="_self">Actueel weerbericht</a>
+        <a class="link" href="/nederland/weerbericht/weerstations" target="_self">Nu kaart en weerstations</a>
+        <a class="link" href="/wereldwijd/europa/7daagse/wind" target="_self">7-daagse wind en luchtdruk</a>
+    </div>
+
+                </div>
+
+                <div id="adholderContainerSidebar">
+                    <div id="adholder_sidebar">
+                        <div id='br-ad-sidebar'></div>
                     </div>
                 </div>
-            </div>
-        </aside>
-    </div>
-    
-    <div id="adholderContainerFooterSmall">
-        <div id="adholder_footersmall" class="center">
-            <div id='br-ad-footer-small'>
-                <script type='text/javascript'>
-                    if (window.innerWidth < 1024) {
-                        if (window.location.pathname.indexOf('/weer') == 0) {
-                            $('#adholderContainerFooterSmall').appendTo($("#wppFooterBannerPos"));
+                <script>
+                    if (window.innerWidth >= 1024 && window.innerWidth < 1280) {
+                        if (window.dfpType === "index") {
+
+                            googletag.cmd.push(function () {
+                                googletag.defineSlot(window.buienradar.ads.getSlot(), [[120, 600]], 'br-ad-sidebar')
+                                    .setTargeting('pos', 'sky1')
+                                    .setTargeting('hpto', window.hptoState)
+                                    .setTargeting('creative', 'rich')
+                                    .addService(googletag.pubads());
+                            });
                         }
-                        googletag.cmd.push(function () { googletag.display('br-ad-footer-small'); });
+                        else {
+                            googletag.cmd.push(function () {
+                                googletag.defineSlot(window.buienradar.ads.getSlot(), [[300, 600], [300, 250], [160, 600], [120, 600]], 'br-ad-sidebar')
+                                    .setTargeting('pos', 'rect1')
+                                    .setTargeting('hpto', window.hptoState)
+                                    .setTargeting('creative', 'rich')
+                                    .addService(googletag.pubads());
+                            });
+                        }
+
+                        googletag.cmd.push(function () { googletag.display('br-ad-sidebar'); });
                     }
+
+                    if (window.innerWidth >= 1280) {
+                        googletag.cmd.push(function () {
+                            googletag.defineSlot(window.buienradar.ads.getSlot(), [[300, 600], [300, 250], [160, 600], [120, 600]], 'br-ad-sidebar')
+                                .setTargeting('pos', 'sky1')
+                                .setTargeting('hpto', window.hptoState)
+                                .setTargeting('creative', 'rich')
+                                .addService(googletag.pubads());
+                        });
+                        googletag.cmd.push(function () { googletag.display('br-ad-sidebar'); });
+                    }
+
                 </script>
+            </aside>
+        </div>
+        
+        <div id="adholderContainerFooterSmall">
+            <div id="adholder_footersmall" class="center">
+                <div id='br-ad-footer-small'></div>
             </div>
         </div>
-    </div>
-</main>
+
+
+        <script>
+            if (window.location.pathname.indexOf('/weer') === 0) {
+                $('#adholderContainerFooterSmall').appendTo($("#wppFooterBannerPos"));
+            }
+
+            if (window.innerWidth < 500) {
+                googletag.cmd.push(function () {
+                    googletag.defineSlot(window.buienradar.ads.getSlot(), [[320, 50], [320, 100], [300, 250], [320, 240], [320, 250]], 'br-ad-footer-small')
+                        .setTargeting('pos', 'rect2')
+                        .setTargeting('hpto', window.hptoState)
+                        .setTargeting('creative', 'simple')
+                        .addService(googletag.pubads());
+                });
+
+                googletag.cmd.push(function () { googletag.display('br-ad-footer-small'); });
+            }
+
+            if (window.innerWidth >= 500 && window.innerWidth < 768) {
+                googletag.cmd.push(function () {
+                    googletag.defineSlot(window.buienradar.ads.getSlot(), [[320, 50], [320, 100], [300, 175], [468, 60], [300, 250], [320, 240], [320, 250]], 'br-ad-footer-small')
+                        .setTargeting('pos', 'rect2')
+                        .setTargeting('hpto', window.hptoState)
+                        .setTargeting('creative', 'simple')
+                        .addService(googletag.pubads());
+                });
+
+                googletag.cmd.push(function () { googletag.display('br-ad-footer-small'); });
+            }
+
+            if (window.innerWidth >= 768 && window.innerWidth < 1024) {
+                googletag.cmd.push(function () {
+                    googletag.defineSlot(window.buienradar.ads.getSlot(), [[728, 90], [468, 60]], 'br-ad-footer-small')
+                        .setTargeting('pos', 'top2')
+                        .setTargeting('hpto', window.hptoState)
+                        .setTargeting('creative', 'rich')
+                        .addService(googletag.pubads());
+                });
+                googletag.cmd.push(function () { googletag.display('br-ad-footer-small'); });
+            }
+
+        </script>
+    </main>
 
 
             
@@ -1296,7 +1422,7 @@
                     <li><a href="/overbuienradar/faq">Veel gestelde vragen</a></li>
                     <li><a href="/overbuienradar/contact">Contact</a></li>
                     <li><a href="/overbuienradar/disclaimer">Disclaimer</a></li>
-                    <li><a href="https://www.rtl.nl/adverterenbij/WD1-SCoAAPgBUmqU" target="_blank">Adverteren</a></li>
+                    <li><a href="https://www.rtl.nl/over/merken/buienradar/WAJanikAAJSDFX7G" target="_blank">Adverteren</a></li>
                 </ul>
                 <ul class="right-side">
                     <li><a href="/nederland/weerbericht/meteorologen">Buienradar Team</a></li>
@@ -1308,7 +1434,7 @@
             </nav>
             <nav class="column link-column hide-on-phone">
                 <div id="myLocationsList">
-    <div id="3730e8cc-6077-427b-af1b-3750bc10b971" class="my-locations-list buienradar-control" data-control="MyLocationsList" data-group="Footer" data-properties="{}">
+    <div id="2a7d160f-9fcb-42f8-92f5-d7036462d076" class="my-locations-list buienradar-control" data-control="MyLocationsList" data-group="Footer" data-properties="{}">
 
             <strong class="title">Mijn weer</strong>
             <ul class="">
@@ -1316,7 +1442,7 @@
             </ul>
     </div>
 </div>
-<div id="27a7aa7a-de0f-42ca-8580-1ad4b65f37fd" class="popup buienradar-control" data-control="Popup" data-group="Footer" data-properties="{}" data-child="MyLocationsEdit">
+<div id="e8124d26-f870-4c77-bf8c-922d963d9a1e" class="popup buienradar-control" data-control="Popup" data-group="Footer" data-properties="{}" data-child="MyLocationsEdit">
     <div class="content">
         <div class="head">
             <div class="title-holder">
@@ -1326,7 +1452,7 @@
         </div>
         <div class="main">
 
-<div id="946b96fd-4f52-4527-aab6-42558a9c9d82" class="buienradar-control my-locations-edit" data-control="MyLocationsEdit" data-group="Footer" data-properties="{}">
+<div id="3bff0ea6-bc1a-4bff-a3f3-9eac3c864ae5" class="buienradar-control my-locations-edit" data-control="MyLocationsEdit" data-group="Footer" data-properties="{}">
         <h3 class="title">Mijn locaties</h3>
         <p class="text">
             Geef aan welke locatie je standaard als eerste wilt zien als je naar Buienradar gaat. Heb je meer dan één favoriete locatie? Op de homepage wissel je gemakkelijk tussen je favorieten.
@@ -1370,7 +1496,7 @@
                     <li>
                         <a href="https://twitter.com/buienradarnl" target="_blank">
                             <figure>
-                                <img src="/resources/svg/social/twitter.svg" alt="Twitter" />
+                                <img src="//cdn.buienradar.nl/resources/svg/social/twitter.svg" alt="Twitter" />
                                 <figcaption class="text">@BuienradarNL</figcaption>
                             </figure>
 
@@ -1379,7 +1505,7 @@
                     <li>
                         <a href="https://nl-nl.facebook.com/buienradar/" target="_blank">
                             <figure>
-                                <img src="/resources/svg/social/facebook.svg" alt="Facebook" />
+                                <img src="//cdn.buienradar.nl/resources/svg/social/facebook.svg" alt="Facebook" />
                                 <figcaption class="text">Buienradar</figcaption>
                             </figure>
                         </a>
@@ -1387,7 +1513,7 @@
                     <li>
                         <a href="https://www.instagram.com/buienradar/?hl=nl" target="_blank">
                             <figure>
-                                <img src="/resources/svg/social/instagram.svg" alt="Instagram" />
+                                <img src="//cdn.buienradar.nl/resources/svg/social/instagram.svg" alt="Instagram" />
                                 <figcaption class="text">Buienradar</figcaption>
                             </figure>
                         </a>
@@ -1395,7 +1521,7 @@
                     <li class="hide-on-phone">
                         <a href="https://play.google.com/store/apps/details?id=com.supportware.Buienradar&hl=nl" target="_blank">
                             <figure>
-                                <img src="/resources/svg/social/google-play.svg" alt="Android" />
+                                <img src="//cdn.buienradar.nl/resources/svg/social/google-play.svg" alt="Android" />
                                 <figcaption class="text">Download de Android app</figcaption>
                             </figure>
                         </a>
@@ -1403,7 +1529,7 @@
                     <li class="hide-on-phone">
                         <a href="https://itunes.apple.com/nl/app/buienradar/id621542526?mt=8" target="_blank">
                             <figure>
-                                <img src="/resources/svg/social/apple.svg" alt="Apple" />
+                                <img src="//cdn.buienradar.nl/resources/svg/social/apple.svg" alt="Apple" />
                                 <figcaption class="text">Download de iOS app</figcaption>
                             </figure>
                         </a>
@@ -1411,7 +1537,7 @@
 
                         <li>
                             <a href="https://www.buienradar.nl/nederland/weerbericht/blog/buienradar-op-de-google-home-1f1f14">
-                                <img class="badge" alt="works with the Google Assistant" src="/resources/images/thirdparty/google-assistant-badge.png" />
+                                <img class="badge" alt="works with the Google Assistant" src="//cdn.buienradar.nl/resources/images/thirdparty/google-assistant-badge.png" />
                             </a>
                         </li>
 
@@ -1421,17 +1547,17 @@
         </div>
     </div>
     <div class="footer-b container">
-        <span class="copyright"><em>Copyright &copy; 2006 - 2019</em> Buienradar&#174; is een geregistreerd merk van RTL Nederland</span>
+        <span class="copyright"><em>Copyright &copy; 2006 - 2020</em> Buienradar&#174; is een geregistreerd merk van RTL Nederland</span>
     </div>
 </div><div class="dev-footer ">
-    <div>Versie: 1.5.39</div>
+    <div>Versie: 1.5.124</div>
     <div id="devFooterOutput" style="overflow: scroll;"></div>
 </div>
 
 
         </div>
     </div>
-    <div id="a5e6601b-aa5f-4959-b551-40e3e388f071" class="popup buienradar-control" data-control="Popup" data-group="" data-properties="{}" data-child="">
+    <div id="a854a248-f878-4d70-907f-5b2f8ff155cd" class="popup buienradar-control" data-control="Popup" data-group="" data-properties="{}" data-child="">
     <div class="content">
         <div class="head">
             <div class="title-holder">
@@ -1449,7 +1575,7 @@
 
 
     <div class="high-contrast-test" style="width: 0px; height: 0px; background-image: url('#')"></div>
-    <script src="//static.buienradar.nl/resources/js/advertisement.js"></script>
+    <script src="//cdn.buienradar.nl/resources/js/advertisement.js"></script>
 
     <!--[if lte IE 9]>
     <script type='text/javascript' src='/resources/js/lib/jquery.xdomainrequest/v1.0.3/jquery.xdomainrequest.min.js'></script>
@@ -1461,6 +1587,7 @@
     
         <script>window.buienradar.liSource = 'www.buienradar.nl';</script>
         <script type="text/javascript" src="https://li.rtl.nl/sdk/v1/li-sdk.js"></script>
+        <script type="text/javascript" src="https://li.rtl.nl/sdk/v1/rtl_li.js"></script>
 
     <script>
         (function (i, s, o, g, r, a, m) {
@@ -1478,6 +1605,14 @@
 
     </script>
 
+
+    <!-- Start GA nu relevant test -->
+    <script type="text/javascript">
+        ga('send', 'event', 'experiments', 'ab_test', 'Nu_Relevant_Default', {
+            nonInteraction: true
+        });
+    </script>
+    <!-- Start GA nu relevant test -->
     <!-- Start GA mobile menu test -->
     <script type="text/javascript">
         if (window.innerWidth <= 768) {
@@ -1488,17 +1623,16 @@
     </script>
     <!-- End GA mobile menu test -->
 
-    <script type="text/javascript">
-                                                                                /*{literal}<![CDATA[*/window.lightningjs || function (c) { function g(b, d) { d && (d += (/\?/.test(d) ? "&" : "?") + "lv=1"); c[b] || function () { var i = window, h = document, j = b, g = h.location.protocol, l = "load", k = 0; (function () { function b() { a.P(l); a.w = 1; c[j]("_load") } c[j] = function () { function m() { m.id = e; return c[j].apply(m, arguments) } var b, e = ++k; b = this && this != i ? this.id || 0 : 0; (a.s = a.s || []).push([e, b, arguments]); m.then = function (b, c, h) { var d = a.fh[e] = a.fh[e] || [], j = a.eh[e] = a.eh[e] || [], f = a.ph[e] = a.ph[e] || []; b && d.push(b); c && j.push(c); h && f.push(h); return m }; return m }; var a = c[j]._ = {}; a.fh = {}; a.eh = {}; a.ph = {}; a.l = d ? d.replace(/^\/\//, (g == "https:" ? g : "http:") + "//") : d; a.p = { 0: +new Date }; a.P = function (b) { a.p[b] = new Date - a.p[0] }; a.w && b(); i.addEventListener ? i.addEventListener(l, b, !1) : i.attachEvent("on" + l, b); var q = function () { function b() { return ["<head></head><", c, ' onload="var d=', n, ";d.getElementsByTagName('head')[0].", d, "(d.", g, "('script')).", i, "='", a.l, "'\"></", c, ">"].join("") } var c = "body", e = h[c]; if (!e) return setTimeout(q, 100); a.P(1); var d = "appendChild", g = "createElement", i = "src", k = h[g]("div"), l = k[d](h[g]("div")), f = h[g]("iframe"), n = "document", p; k.style.display = "none"; e.insertBefore(k, e.firstChild).id = o + "-" + j; f.frameBorder = "0"; f.id = o + "-frame-" + j; /MSIE[ ]+6/.test(navigator.userAgent) && (f[i] = "javascript:false"); f.allowTransparency = "true"; l[d](f); try { f.contentWindow[n].open() } catch (s) { a.domain = h.domain, p = "javascript:var d=" + n + ".open();d.domain='" + h.domain + "';", f[i] = p + "void(0);" } try { var r = f.contentWindow[n]; r.write(b()); r.close() } catch (t) { f[i] = p + 'd.write("' + b().replace(/"/g, String.fromCharCode(92) + '"') + '");d.close();' } a.P(2) }; a.l && setTimeout(q, 0) })() }(); c[b].lv = "1"; return c[b] } var o = "lightningjs", k = window[o] = g(o); k.require = g; k.modules = c }({});
-            if (!navigator.userAgent.match(/Android|BlackBerry|BB10|iPhone|iPad|iPod|Opera Mini|IEMobile/i)) { window.usabilla_live = lightningjs.require("usabilla_live", "//w.usabilla.com/69cf7cb11116.js"); } else { window.usabilla_live = lightningjs.require("usabilla_live", "//w.usabilla.com/ede720afffd1.js"); }/*]]>{/literal}*/</script>
 
-
+        <script type="text/javascript">
+                                                                                                                /*{literal}<![CDATA[*/window.lightningjs || function (c) { function g(b, d) { d && (d += (/\?/.test(d) ? "&" : "?") + "lv=1"); c[b] || function () { var i = window, h = document, j = b, g = h.location.protocol, l = "load", k = 0; (function () { function b() { a.P(l); a.w = 1; c[j]("_load") } c[j] = function () { function m() { m.id = e; return c[j].apply(m, arguments) } var b, e = ++k; b = this && this != i ? this.id || 0 : 0; (a.s = a.s || []).push([e, b, arguments]); m.then = function (b, c, h) { var d = a.fh[e] = a.fh[e] || [], j = a.eh[e] = a.eh[e] || [], f = a.ph[e] = a.ph[e] || []; b && d.push(b); c && j.push(c); h && f.push(h); return m }; return m }; var a = c[j]._ = {}; a.fh = {}; a.eh = {}; a.ph = {}; a.l = d ? d.replace(/^\/\//, (g == "https:" ? g : "http:") + "//") : d; a.p = { 0: +new Date }; a.P = function (b) { a.p[b] = new Date - a.p[0] }; a.w && b(); i.addEventListener ? i.addEventListener(l, b, !1) : i.attachEvent("on" + l, b); var q = function () { function b() { return ["<head></head><", c, ' onload="var d=', n, ";d.getElementsByTagName('head')[0].", d, "(d.", g, "('script')).", i, "='", a.l, "'\"></", c, ">"].join("") } var c = "body", e = h[c]; if (!e) return setTimeout(q, 100); a.P(1); var d = "appendChild", g = "createElement", i = "src", k = h[g]("div"), l = k[d](h[g]("div")), f = h[g]("iframe"), n = "document", p; k.style.display = "none"; e.insertBefore(k, e.firstChild).id = o + "-" + j; f.frameBorder = "0"; f.id = o + "-frame-" + j; /MSIE[ ]+6/.test(navigator.userAgent) && (f[i] = "javascript:false"); f.allowTransparency = "true"; l[d](f); try { f.contentWindow[n].open() } catch (s) { a.domain = h.domain, p = "javascript:var d=" + n + ".open();d.domain='" + h.domain + "';", f[i] = p + "void(0);" } try { var r = f.contentWindow[n]; r.write(b()); r.close() } catch (t) { f[i] = p + 'd.write("' + b().replace(/"/g, String.fromCharCode(92) + '"') + '");d.close();' } a.P(2) }; a.l && setTimeout(q, 0) })() }(); c[b].lv = "1"; return c[b] } var o = "lightningjs", k = window[o] = g(o); k.require = g; k.modules = c }({});
+                if (!navigator.userAgent.match(/Android|BlackBerry|BB10|iPhone|iPad|iPod|Opera Mini|IEMobile/i)) { window.usabilla_live = lightningjs.require("usabilla_live", "//w.usabilla.com/69cf7cb11116.js"); } else { window.usabilla_live = lightningjs.require("usabilla_live", "//w.usabilla.com/ede720afffd1.js"); }/*]]>{/literal}*/</script>
 
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NH3RQL3&source=102387"
                 height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
 
-    <!-- Buienradar: production:1.5.39: - Template: Content - Actions:  -->
+    <!-- Buienradar: production:1.5.124: - Template: Content - Actions: none -->
 </body>
 </html>
