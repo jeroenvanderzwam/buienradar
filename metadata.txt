@@ -10,7 +10,7 @@
 name=Buienradar Plugin
 qgisMinimumVersion=3.4
 description=A simple plugin that retrieves weather data from the Dutch Buienradar API. Currently only in Dutch.
-version=1.3
+version=1.4
 author=Peter Schols & Jeroen van der Zwam
 email=peter@peterschols.com, jeroenvanderzwam@hotmail.com
 
@@ -24,6 +24,7 @@ repository=https://github.com/jeroenvanderzwam/buienradar
 
 # Uncomment the following line and add your changelog:
 changelog=
+    1.4 - updated the background layers to new urls and minor popup layout changes
     1.3 - resolved night and day icons 
     1.2 - removed dependencies for Pandas and xmltodict
     1.1 - resolved dubble letters in icons

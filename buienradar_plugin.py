@@ -305,14 +305,14 @@ class Buienradar:
         if result:
             
             if self.dlg.brtBtn.isChecked():
-                uritopo = "tileMatrixSet=EPSG:28992&crs=EPSG:28992&layers=brtachtergrondkaartgrijs&styles=&format=image/png&url=http://geodata.nationaalgeoregister.nl/tiles/service/wmts/brtachtergrondkaartgrijs"
+                uritopo = 'tileMatrixSet=EPSG:28992&crs=EPSG:28992&layers=standaard&styles=default&format=image/png&url=https://service.pdok.nl/brt/achtergrondkaart/wmts/v2_0?request%3DGetCapabilities%26service%3DWMTS'
 
                 topolayer = QgsRasterLayer(uritopo, 'BRT achtergrondkaart', 'wms')
                 if topolayer.isValid():
                     QgsProject.instance().addMapLayer(topolayer)
                     
             if self.dlg.osmBtn.isChecked():
-                uriluchtfoto = "tileMatrixSet=EPSG:28992&crs=EPSG:28992&layers=Actueel_ortho25&styles=&format=image/png&url=https://geodata.nationaalgeoregister.nl/luchtfoto/rgb/wmts/Actueel_ortho25"
+                uriluchtfoto = 'tileMatrixSet=EPSG:28992&crs=EPSG:28992&layers=Actueel_ortho25&styles=default&format=image/jpeg&url=https://service.pdok.nl/hwh/luchtfotorgb/wmts/v1_0'
 
                 luchtfotolayer = QgsRasterLayer(uriluchtfoto, 'Luchtfoto actueel', 'wms')
                 if luchtfotolayer.isValid():
