@@ -12,9 +12,10 @@ __author__ = 'jeroenvanderzwam@hotmail.com'
 __date__ = '2019-04-13'
 __copyright__ = 'Copyright 2019, Peter Schols en Jeroen van der Zwam'
 
+import os
 import unittest
 
-from PyQt5.QtGui import QIcon
+from qgis.PyQt.QtGui import QIcon
 
 
 
@@ -31,7 +32,7 @@ class BuienradarDialogTest(unittest.TestCase):
 
     def test_icon_png(self):
         """Test we can click OK."""
-        path = ':/plugins/Buienradar/icon.png'
+        path = os.path.join(os.path.dirname(__file__), '..', 'icon.png')
         icon = QIcon(path)
         self.assertFalse(icon.isNull())
 

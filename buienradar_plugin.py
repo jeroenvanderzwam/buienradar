@@ -22,12 +22,10 @@
  ***************************************************************************/
 """
 
-from PyQt5.QtCore import QSettings, QTranslator, qVersion, QCoreApplication, QVariant
-from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QAction
+from qgis.PyQt.QtCore import QSettings, QTranslator, qVersion, QCoreApplication
+from qgis.PyQt.QtGui import QIcon
+from qgis.PyQt.QtWidgets import QAction
 
-# Initialize Qt resources from file resources.py
-from .resources import *
 # Import the code for the dialog
 from .buienradar_plugin_dialog import BuienradarDialog
 import os.path
@@ -218,7 +216,7 @@ class Buienradar:
     def initGui(self):
         """Create the menu entries and toolbar icons inside the QGIS GUI."""
 
-        icon_path = ':/plugins/buienradar_plugin/icon.png'
+        icon_path = resolve('icon.png')
         self.add_action(
             icon_path,
             text=self.tr(u'Buienradar Plugin'),
@@ -251,8 +249,8 @@ class Buienradar:
         prov_lyr = self.lyr.dataProvider()
 
         # Categorieën aanmaken voor de renderer
-        stijlveld = prov_lyr.fieldNameIndex('icoonactueel')
-        zinveld = prov_lyr.fieldNameIndex('zin')
+        stijlveld = self.lyr.fields().indexOf('icoonactueel')
+        zinveld = self.lyr.fields().indexOf('zin')
         
         # Dictionary maken met letter als key en zin als value
         legenda = {}
@@ -299,7 +297,7 @@ class Buienradar:
         # show the dialog
         self.dlg.show()
         # Run the dialog event loop
-        result = self.dlg.exec_()
+        result = self.dlg.exec()
         
         # See if OK was pressed
         if result:
