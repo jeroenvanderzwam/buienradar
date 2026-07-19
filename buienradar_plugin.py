@@ -33,9 +33,9 @@ import os.path
 from qgis.core import *
 import qgis.utils
 
-import xml.etree.ElementTree as ET
+import defusedxml.ElementTree as ET
 import csv
-import urllib.request
+import http.client
 
 def resolve(name, basepath=None):
     if not basepath:
@@ -48,8 +48,11 @@ class GetBuienradarData:
     def krijgData(self):
         '''Methode voor het omzetten van xml naar csv'''
 
-        tree = ET.parse(urllib.request.urlopen('https://data.buienradar.nl/1.0/feed/xml'))
-        root = tree.getroot()
+        conn = http.client.HTTPSConnection('data.buienradar.nl')
+        conn.request('GET', '/1.0/feed/xml')
+        xml_bytes = conn.getresponse().read()
+        conn.close()
+        root = ET.fromstring(xml_bytes)
 
         # Aanmaken CSV writer
         buienradardata = open(resolve('buienradardata.csv'), 'w', newline='')
