@@ -44,55 +44,58 @@ import defusedxml.ElementTree as ET
 import csv
 import http.client
 
+
 def resolve(name, basepath=None):
     if not basepath:
-      basepath = os.path.dirname(os.path.realpath(__file__))
+        basepath = os.path.dirname(os.path.realpath(__file__))
     return os.path.join(basepath, name)
 
+
 class GetBuienradarData:
-    '''Class om de buienradar te activeren'''
+    """Class om de buienradar te activeren"""
 
     def krijgData(self):
-        '''Methode voor het omzetten van xml naar csv'''
+        """Methode voor het omzetten van xml naar csv"""
 
-        conn = http.client.HTTPSConnection('data.buienradar.nl')
-        conn.request('GET', '/1.0/feed/xml')
+        conn = http.client.HTTPSConnection("data.buienradar.nl")
+        conn.request("GET", "/1.0/feed/xml")
         xml_bytes = conn.getresponse().read()
         conn.close()
         root = ET.fromstring(xml_bytes)
 
         # Aanmaken CSV writer
-        buienradardata = open(resolve('buienradardata.csv'), 'w', newline='')
+        buienradardata = open(resolve("buienradardata.csv"), "w", newline="")
         csvwriter = csv.writer(buienradardata)
 
         # Loop voor alle weerstations
-        for station in root.iter('weerstation'):
+        for station in root.iter("weerstation"):
             header = []
-            for child in root.iter('weerstation'):
+            for child in root.iter("weerstation"):
                 for x in child:
                     header.append(x.tag)
                 break
 
-            header.insert(0, '@id')
-            header.insert(-4, 'zin')
+            header.insert(0, "@id")
+            header.insert(-4, "zin")
         csvwriter.writerow(header)
-            
-        for child in root.iter('weerstation'):
+
+        for child in root.iter("weerstation"):
             attributen = []
             for attr in header:
-                if attr == '@id':
-                    var = child.attrib['id']
-                elif attr == 'icoonactueel':
-                    var = child.find('icoonactueel').attrib['ID']
-                elif attr == 'zin':
-                    var = child.find('icoonactueel').attrib['zin']
+                if attr == "@id":
+                    var = child.attrib["id"]
+                elif attr == "icoonactueel":
+                    var = child.find("icoonactueel").attrib["ID"]
+                elif attr == "zin":
+                    var = child.find("icoonactueel").attrib["zin"]
                 else:
                     var = child.find(attr).text
-                attributen.append(var)   
+                attributen.append(var)
             csvwriter.writerow(attributen)
-        
+
         # Sluiten CSV bestand
         buienradardata.close()
+
 
 class Buienradar:
     """QGIS Plugin Implementation."""
@@ -110,28 +113,25 @@ class Buienradar:
         # initialize plugin directory
         self.plugin_dir = os.path.dirname(__file__)
         # initialize locale
-        locale = QSettings().value('locale/userLocale')[0:2]
+        locale = QSettings().value("locale/userLocale")[0:2]
         locale_path = os.path.join(
-            self.plugin_dir,
-            'i18n',
-            'Buienradar_{}.qm'.format(locale))
+            self.plugin_dir, "i18n", "Buienradar_{}.qm".format(locale)
+        )
 
         if os.path.exists(locale_path):
             self.translator = QTranslator()
             self.translator.load(locale_path)
 
-            if qVersion() > '4.3.3':
+            if qVersion() > "4.3.3":
                 QCoreApplication.installTranslator(self.translator)
 
         # Declare instance attributes
         self.actions = []
-        self.menu = self.tr(u'&Buienradar Plugin')
+        self.menu = self.tr("&Buienradar Plugin")
 
         # Check if plugin was started the first time in current QGIS session
         # Must be set in initGui() to survive plugin reloads
         self.first_start = None
-        
-        
 
     # noinspection PyMethodMayBeStatic
     def tr(self, message):
@@ -146,8 +146,7 @@ class Buienradar:
         :rtype: QString
         """
         # noinspection PyTypeChecker,PyArgumentList,PyCallByClass
-        return QCoreApplication.translate('Buienradar', message)
-
+        return QCoreApplication.translate("Buienradar", message)
 
     def add_action(
         self,
@@ -159,7 +158,8 @@ class Buienradar:
         add_to_toolbar=True,
         status_tip=None,
         whats_this=None,
-        parent=None):
+        parent=None,
+    ):
         """Add a toolbar icon to the toolbar.
 
         :param icon_path: Path to the icon for this action. Can be a resource
@@ -215,9 +215,7 @@ class Buienradar:
             self.iface.addToolBarIcon(action)
 
         if add_to_menu:
-            self.iface.addPluginToWebMenu(
-                self.menu,
-                action)
+            self.iface.addPluginToWebMenu(self.menu, action)
 
         self.actions.append(action)
 
@@ -226,49 +224,52 @@ class Buienradar:
     def initGui(self):
         """Create the menu entries and toolbar icons inside the QGIS GUI."""
 
-        icon_path = resolve('icon.png')
+        icon_path = resolve("icon.png")
         self.add_action(
             icon_path,
-            text=self.tr(u'Buienradar Plugin'),
+            text=self.tr("Buienradar Plugin"),
             callback=self.run,
-            parent=self.iface.mainWindow())
+            parent=self.iface.mainWindow(),
+        )
 
         # will be set False in run()
         self.first_start = True
 
-
     def unload(self):
         """Removes the plugin menu item and icon from QGIS GUI."""
         for action in self.actions:
-            self.iface.removePluginWebMenu(
-                self.tr(u'&Buienradar Plugin'),
-                action)
+            self.iface.removePluginWebMenu(self.tr("&Buienradar Plugin"), action)
             self.iface.removeToolBarIcon(action)
 
     def load_buienradar(self):
-        '''Methode voor het laden en stijlen van de buienradar data'''
+        """Methode voor het laden en stijlen van de buienradar data"""
         # Verkrijgen van data
         buienRadar = GetBuienradarData()
         buienRadar.krijgData()
 
         # Definiëren en aanmaken van laag
-        self.uri = "file:///" + resolve('buienradardata.csv') + "?encoding=%s&delimiter=%s&xField=%s&yField=%s&crs=%s" % ("UTF-8",",", "lon", "lat","epsg:4326")
-        self.lyr = QgsVectorLayer(self.uri, 'Buienradar', 'delimitedtext')
+        self.uri = (
+            "file:///"
+            + resolve("buienradardata.csv")
+            + "?encoding=%s&delimiter=%s&xField=%s&yField=%s&crs=%s"
+            % ("UTF-8", ",", "lon", "lat", "epsg:4326")
+        )
+        self.lyr = QgsVectorLayer(self.uri, "Buienradar", "delimitedtext")
 
         # Aanmaken van data providers
         prov_lyr = self.lyr.dataProvider()
 
         # Categorieën aanmaken voor de renderer
-        stijlveld = self.lyr.fields().indexOf('icoonactueel')
-        zinveld = self.lyr.fields().indexOf('zin')
-        
+        stijlveld = self.lyr.fields().indexOf("icoonactueel")
+        zinveld = self.lyr.fields().indexOf("zin")
+
         # Dictionary maken met letter als key en zin als value
         legenda = {}
         it = self.lyr.getFeatures()
         for feat in it:
             att = feat.attributes()
-            legenda.setdefault(att[stijlveld],att[zinveld])
-        
+            legenda.setdefault(att[stijlveld], att[zinveld])
+
         # Genereren van de vershillende categorieën op basis van de unieke waardes
         unieke_waardes = prov_lyr.uniqueValues(stijlveld)
         categorieen = []
@@ -276,17 +277,19 @@ class Buienradar:
         for uniek in unieke_waardes:
             symbool = QgsSymbol.defaultSymbol(self.lyr.geometryType())
             svgStyle = {}
-            svgStyle['name'] = resolve(r'svg/{}.svg'.format(uniek))
-            svgStyle['size'] = '6'
+            svgStyle["name"] = resolve(r"svg/{}.svg".format(uniek))
+            svgStyle["size"] = "6"
             symboollaag = QgsSvgMarkerSymbolLayer.create(svgStyle)
             if symboollaag is not None:
                 symbool.changeSymbolLayer(0, symboollaag)
 
-            categorie = QgsRendererCategory(uniek, symbool, legenda[uniek]) # De dictionary zorgt dat iedere letter de juiste tekst krijgt
+            categorie = QgsRendererCategory(
+                uniek, symbool, legenda[uniek]
+            )  # De dictionary zorgt dat iedere letter de juiste tekst krijgt
             categorieen.append(categorie)
 
         # Aanmaken van renderer
-        stijl = QgsCategorizedSymbolRenderer('icoonactueel', categorieen)
+        stijl = QgsCategorizedSymbolRenderer("icoonactueel", categorieen)
         self.lyr.setRenderer(stijl)
 
         # Extent updaten en kaarlaag laden
@@ -300,7 +303,7 @@ class Buienradar:
 
         # Create the dialog with elements (after translation) and keep reference
         # Only create GUI ONCE in callback, so that it will only load when the plugin is started
-        if self.first_start == True:
+        if self.first_start:
             self.first_start = False
             self.dlg = BuienradarDialog()
 
@@ -308,22 +311,23 @@ class Buienradar:
         self.dlg.show()
         # Run the dialog event loop
         result = self.dlg.exec()
-        
+
         # See if OK was pressed
         if result:
-            
             if self.dlg.brtBtn.isChecked():
-                uritopo = 'tileMatrixSet=EPSG:28992&crs=EPSG:28992&layers=standaard&styles=default&format=image/png&url=https://service.pdok.nl/brt/achtergrondkaart/wmts/v2_0?request%3DGetCapabilities%26service%3DWMTS'
+                uritopo = "tileMatrixSet=EPSG:28992&crs=EPSG:28992&layers=standaard&styles=default&format=image/png&url=https://service.pdok.nl/brt/achtergrondkaart/wmts/v2_0?request%3DGetCapabilities%26service%3DWMTS"
 
-                topolayer = QgsRasterLayer(uritopo, 'BRT achtergrondkaart', 'wms')
+                topolayer = QgsRasterLayer(uritopo, "BRT achtergrondkaart", "wms")
                 if topolayer.isValid():
                     QgsProject.instance().addMapLayer(topolayer)
-                    
-            if self.dlg.osmBtn.isChecked():
-                uriluchtfoto = 'tileMatrixSet=EPSG:28992&crs=EPSG:28992&layers=Actueel_ortho25&styles=default&format=image/jpeg&url=https://service.pdok.nl/hwh/luchtfotorgb/wmts/v1_0'
 
-                luchtfotolayer = QgsRasterLayer(uriluchtfoto, 'Luchtfoto actueel', 'wms')
+            if self.dlg.osmBtn.isChecked():
+                uriluchtfoto = "tileMatrixSet=EPSG:28992&crs=EPSG:28992&layers=Actueel_ortho25&styles=default&format=image/jpeg&url=https://service.pdok.nl/hwh/luchtfotorgb/wmts/v1_0"
+
+                luchtfotolayer = QgsRasterLayer(
+                    uriluchtfoto, "Luchtfoto actueel", "wms"
+                )
                 if luchtfotolayer.isValid():
                     QgsProject.instance().addMapLayer(luchtfotolayer)
-                    
+
             self.load_buienradar()
