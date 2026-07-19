@@ -26,11 +26,24 @@ Installeer ook de core-plugin **Plugin Reloader** (via Manage and Install Plugin
 
 ## Releasen naar de QGIS plugin repository
 
-1. **Versie bumpen.** Verhoog `version=` in [metadata.txt](metadata.txt) en voeg een regel toe aan de `changelog=`.
-2. **Zip bouwen.** De zip moet een map `buienradar_plugin/` als root hebben met alleen de uit te leveren bestanden (geen `test/`, `Makefile`, `.git`, ...):
-   - Aanrader: `pip install pb_tool` en dan `pb_tool zip` (gebruikt de bestandenlijst uit [pb_tool.cfg](pb_tool.cfg)).
-3. **Uploaden**: inloggen op plugins.qgis.org met het account dat eigenaar is van de plugin, naar de plugin-pagina, nieuwe versie uploaden.
-4. **Controleren.** Na upload valideert de repository het pakket en publiceert de nieuwe versie.
+1. **Testen.** Grondig testen in zowel QGIS 3 als QGIS 4 via de junction + Plugin Reloader (zie hierboven).
+2. **Versie bumpen.** Verhoog `version=` in [metadata.txt](metadata.txt) en voeg een regel toe aan de `changelog=`.
+3. **Zip bouwen** met `git archive` (geen extra tools nodig):
+   ```bash
+   git archive --prefix=buienradar_plugin/ -o buienradar_plugin.zip HEAD -- \
+     __init__.py \
+     buienradar_plugin.py \
+     buienradar_plugin_dialog.py \
+     buienradar_plugin_dialog_base.ui \
+     metadata.txt \
+     icon.png \
+     LICENSE \
+     README.md \
+     svg/
+   ```
+   Dit maakt `buienradar_plugin.zip` met uitsluitend de runtime-bestanden, zonder `test/`, `Makefile` of andere devbestanden.
+4. **Uploaden**: inloggen op plugins.qgis.org met het account dat eigenaar is van de plugin → plugin-pagina → nieuwe versie uploaden.
+5. **Controleren.** Na upload valideert de repository het pakket en publiceert de nieuwe versie.
 
 ## Contact
 
