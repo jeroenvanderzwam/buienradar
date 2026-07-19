@@ -30,8 +30,15 @@ from qgis.PyQt.QtWidgets import QAction
 from .buienradar_plugin_dialog import BuienradarDialog
 import os.path
 
-from qgis.core import *
-import qgis.utils
+from qgis.core import (
+    QgsCategorizedSymbolRenderer,
+    QgsProject,
+    QgsRasterLayer,
+    QgsRendererCategory,
+    QgsSvgMarkerSymbolLayer,
+    QgsSymbol,
+    QgsVectorLayer,
+)
 
 import defusedxml.ElementTree as ET
 import csv
