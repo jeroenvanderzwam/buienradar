@@ -39,9 +39,7 @@ Installeer ook de core-plugin **Plugin Reloader** (via Manage and Install Plugin
      icon.png \
      LICENSE \
      README.md \
-     svg/ \
-     defusedxml/ \
-     setup.cfg
+     svg/
    ```
    Dit maakt `buienradar_plugin.zip` met uitsluitend de runtime-bestanden, zonder `test/`, `Makefile` of andere devbestanden.
 4. **Uploaden**: inloggen op plugins.qgis.org met het account dat eigenaar is van de plugin → plugin-pagina → nieuwe versie uploaden.

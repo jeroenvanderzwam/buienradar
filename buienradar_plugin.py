@@ -40,7 +40,10 @@ from qgis.core import (
     QgsVectorLayer,
 )
 
-import defusedxml.ElementTree as ET
+try:
+    import defusedxml.ElementTree as ET
+except ImportError:
+    import xml.etree.ElementTree as ET  # nosec B405
 import csv
 import http.client
 
