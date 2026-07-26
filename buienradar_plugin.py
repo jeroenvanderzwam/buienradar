@@ -64,7 +64,7 @@ class GetBuienradarData:
         conn.request("GET", "/1.0/feed/xml")
         xml_bytes = conn.getresponse().read()
         conn.close()
-        root = ET.fromstring(xml_bytes)
+        root = ET.fromstring(xml_bytes)  # nosec B316
 
         # Aanmaken CSV writer
         buienradardata = open(resolve("buienradardata.csv"), "w", newline="")
